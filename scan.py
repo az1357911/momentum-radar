@@ -15,6 +15,8 @@
 所有欄位改用「欄位名稱」對應，不用寫死的 index，避免證交所調整欄位順序就壞掉。
 """
 
+import csv
+import io
 import json
 import sys
 import time
@@ -191,15 +193,22 @@ def fetch_month_closes(code, yyyymm01):
     return closes
 
 
-def get_recent_closes(code, ref_date):
-    """取參考日所在月 + 前一個月的收盤價，串成時間序列（舊→新）。"""
-    d = dt.datetime.strptime(ref_date, "%Y%m%d")
-    cur = d.strftime("%Y%m01")
-    prev_month = (d.replace(day=1) - dt.timedelta(days=1))
-    prev = prev_month.strftime("%Y%m01")
+def get_recent_closes(code, ref_date, months=4):
+    """
+    取參考日往回 N 個月的收盤價，串成時間序列（舊→新）。
+    EMA20 要夠長的序列種子才穩定；只取 2 個月會讓 EMA 種子偏差、判斷飄移，
+    故預設抓 4 個月（約 80 個交易日）。
+    """
+    first = dt.datetime.strptime(ref_date, "%Y%m%d").replace(day=1)
+    yms = []
+    d = first
+    for _ in range(months):
+        yms.append(d.strftime("%Y%m01"))
+        d = (d - dt.timedelta(days=1)).replace(day=1)
+    yms.reverse()  # 舊 → 新
 
     closes = []
-    for ym in (prev, cur):
+    for ym in yms:
         closes.extend(fetch_month_closes(code, ym))
         time.sleep(REQUEST_PAUSE)
     return closes
@@ -227,6 +236,53 @@ def check_bullish(code, ref_date):
     if None in (e5, e10, e20):
         return None, last
     return (e5 > e10 > e20), last
+
+
+# ---------- 全市場成交均價（把買賣超股數換算成金額用）----------
+STOCK_DAY_ALL_URL = ("https://www.twse.com.tw/rwd/zh/afterTrading/"
+                     "STOCK_DAY_ALL?response=json")
+
+
+def fetch_vwap_map():
+    """
+    抓 STOCK_DAY_ALL（全上市當日成交），回傳 {code: vwap}。
+    vwap = 成交金額 / 成交股數（當日成交均價）。用它把『買賣超股數』換算成
+    『買賣超金額』，對齊 CMoney 等工具的「外資/投信買超金額前 100」排名
+    （實測台光電外資金額用此法算出與 CMoney 完全吻合）。
+    這支 rwd 端點回傳 CSV（非 JSON），且有『當日』資料（openapi 只有前一日）。
+    欄位一律用「名稱」定位，不寫死 index。抓不到回傳 {}。
+    """
+    text = None
+    for i in range(4):
+        try:
+            r = session.get(STOCK_DAY_ALL_URL, timeout=30)
+            r.raise_for_status()
+            text = r.text
+            break
+        except Exception as e:  # noqa
+            time.sleep(1.5 * (i + 1))
+    if not text:
+        print("  ! STOCK_DAY_ALL 抓取失敗，本次無法算金額")
+        return {}
+    reader = csv.reader(io.StringIO(text))
+    header = next(reader, None)
+    if not header:
+        return {}
+    col = {name.strip().strip('"'): i for i, name in enumerate(header)}
+    ic, iv, ivol = col.get("證券代號"), col.get("成交金額"), col.get("成交股數")
+    if None in (ic, iv, ivol):
+        print("  ! STOCK_DAY_ALL 欄位對應失敗，本次無法算金額")
+        return {}
+    out = {}
+    for row in reader:
+        if len(row) <= max(ic, iv, ivol):
+            continue
+        code = row[ic].strip().strip('"')
+        val = to_float(row[iv].strip().strip('"'))
+        vol = to_float(row[ivol].strip().strip('"'))
+        if code and val and vol and vol > 0:
+            out[code] = val / vol
+    return out
 
 
 # ---------- 股利（自選按鈕「只看有配息」用）----------
@@ -289,9 +345,24 @@ def main():
         print("解析後無資料（欄位對應可能失敗），結束。")
         sys.exit(1)
 
-    # 排名（以股數估算，非金額）
-    by_foreign = sorted(all_stocks, key=lambda x: x["foreign"], reverse=True)[:TOP_N]
-    by_trust = sorted(all_stocks, key=lambda x: x["trust"], reverse=True)[:TOP_N]
+    # 把『買賣超股數』換算成『買賣超金額』(股數 × 當日成交均價)，對齊 CMoney 的金額排名。
+    vwap = fetch_vwap_map()
+    if vwap:
+        for s in all_stocks:
+            p = vwap.get(s["code"])
+            s["foreignAmt"] = int(s["foreign"] * p) if p is not None else None
+            s["trustAmt"] = int(s["trust"] * p) if p is not None else None
+        rankable = [s for s in all_stocks if s.get("foreignAmt") is not None]
+        fkey, tkey = (lambda x: x["foreignAmt"]), (lambda x: x["trustAmt"])
+        print(f"排名依據：買賣超『金額』(股數×成交均價)，可算金額 {len(rankable)}/{len(all_stocks)} 檔")
+    else:
+        # 拿不到成交均價時退回股數排名，至少不讓整個流程掛掉
+        rankable = all_stocks
+        fkey, tkey = (lambda x: x["foreign"]), (lambda x: x["trust"])
+        print("! 拿不到成交均價，本次改用『股數』排名（金額欄位留空）")
+
+    by_foreign = sorted(rankable, key=fkey, reverse=True)[:TOP_N]
+    by_trust = sorted(rankable, key=tkey, reverse=True)[:TOP_N]
     foreign_rank = {s["code"]: i + 1 for i, s in enumerate(by_foreign)}
     trust_rank = {s["code"]: i + 1 for i, s in enumerate(by_trust)}
 
@@ -318,6 +389,8 @@ def main():
                 "market": "TWSE",
                 "foreignRank": foreign_rank[s["code"]],
                 "trustRank": trust_rank[s["code"]],
+                "foreignAmt": s.get("foreignAmt"),  # 買賣超金額(元)，前端可顯示
+                "trustAmt": s.get("trustAmt"),
                 "close": close,
             })
 
