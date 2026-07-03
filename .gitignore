@@ -1,0 +1,12 @@
+# 原始打包檔與舊版單機 HTML（不進 repo，避免與 docs/index.html 混淆）
+five-day-radar.zip
+五日動能雷達.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store

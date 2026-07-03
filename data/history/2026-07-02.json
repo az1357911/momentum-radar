@@ -1,0 +1,58 @@
+[
+  {
+    "code": "1303",
+    "name": "南亞",
+    "market": "TWSE",
+    "foreignRank": 14,
+    "trustRank": 8,
+    "close": 197.0
+  },
+  {
+    "code": "1102",
+    "name": "亞泥",
+    "market": "TWSE",
+    "foreignRank": 18,
+    "trustRank": 54,
+    "close": 36.45
+  },
+  {
+    "code": "2449",
+    "name": "京元電子",
+    "market": "TWSE",
+    "foreignRank": 52,
+    "trustRank": 32,
+    "close": 335.0
+  },
+  {
+    "code": "1409",
+    "name": "新纖",
+    "market": "TWSE",
+    "foreignRank": 17,
+    "trustRank": 69,
+    "close": 31.0
+  },
+  {
+    "code": "6191",
+    "name": "精成科",
+    "market": "TWSE",
+    "foreignRank": 83,
+    "trustRank": 21,
+    "close": 108.0
+  },
+  {
+    "code": "1717",
+    "name": "長興",
+    "market": "TWSE",
+    "foreignRank": 44,
+    "trustRank": 61,
+    "close": 81.6
+  },
+  {
+    "code": "1210",
+    "name": "大成",
+    "market": "TWSE",
+    "foreignRank": 43,
+    "trustRank": 66,
+    "close": 58.0
+  }
+]

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五日動能雷達</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14161A; --panel:#1D2025; --panel-alt:#252932; --line:#33373E;
+    --ink:#EDEAE3; --ink-dim:#9A9DA3; --ink-faint:#5C5F66;
+    --up:#E1544B; --down:#3AA47C; --amber:#E3A23A;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Noto Sans TC',system-ui,-apple-system,'PingFang TC','Microsoft JhengHei',sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+  .wrap{max-width:640px;margin:0 auto;padding:0 0 60px;}
+
+  header{padding:28px 20px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:6px;}
+  h1{font-size:24px;font-weight:900;margin:0 0 4px;letter-spacing:.02em;}
+  .sub{font-size:13px;color:var(--ink-dim);}
+  .date-row{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-dim);
+    display:flex;justify-content:space-between;align-items:baseline;}
+  .date-row b{color:var(--ink);font-size:16px;}
+
+  .toolbar{padding:14px 20px 0;display:flex;gap:8px;align-items:center;}
+  button.ghost{padding:9px 14px;border:1px solid var(--line);border-radius:2px;background:transparent;
+    color:var(--ink-dim);font-size:13px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;}
+  button.ghost:active{background:var(--panel-alt);}
+  .stamp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);margin-left:auto;}
+
+  section{padding:26px 20px 0;}
+  .section-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;}
+  .section-title h2{font-size:15px;font-weight:700;margin:0;letter-spacing:.02em;}
+  .section-title .count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-dim);}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:14px 16px;margin-bottom:8px;}
+  .card-top{display:flex;justify-content:space-between;align-items:center;}
+  .card-name{font-weight:700;font-size:15px;}
+  .card-code{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-dim);margin-left:6px;}
+  .card-price{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:600;}
+  .card-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 7px;border-radius:2px;letter-spacing:.03em;}
+  .tag.foreign{background:rgba(225,84,75,.14);color:var(--up);border:1px solid rgba(225,84,75,.3);}
+  .tag.trust{background:rgba(58,164,124,.14);color:var(--down);border:1px solid rgba(58,164,124,.3);}
+  .tag.ema{background:rgba(227,162,58,.14);color:var(--amber);border:1px solid rgba(227,162,58,.3);}
+
+  .streak-card{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:14px 16px;margin-bottom:8px;}
+  .streak-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .streak-rank{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);width:20px;display:inline-block;}
+  .streak-dots{display:flex;gap:5px;align-items:center;}
+  .dot{width:11px;height:11px;border-radius:1px;border:1px solid var(--ink-faint);}
+  .dot.on{background:var(--amber);border-color:var(--amber);}
+  .streak-count{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--amber);font-weight:600;}
+
+  .empty{padding:30px 16px;text-align:center;color:var(--ink-faint);font-size:13px;
+    border:1px dashed var(--line);border-radius:2px;}
+  .note{font-size:12px;color:var(--ink-faint);line-height:1.7;padding:16px 20px 0;}
+  .note b{color:var(--ink-dim);}
+  footer{padding:30px 20px 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:30px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">籌碼 × 均線 · 每日自動建檔</div>
+    <h1>五日動能雷達</h1>
+    <div class="sub">外資買超 ∩ 投信買超 ∩ EMA5&gt;10&gt;20 多頭排列</div>
+    <div class="date-row"><span>資料交易日</span><b id="refDate" class="mono">--</b></div>
+  </header>
+
+  <div class="toolbar">
+    <button class="ghost" id="refreshBtn">重新整理</button>
+    <span class="stamp" id="stamp">載入中…</span>
+  </div>
+
+  <section>
+    <div class="section-title"><h2>當日候選名單</h2><span class="count" id="todayCount">— 檔</span></div>
+    <div id="todayList"><div class="empty">載入中…</div></div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>五日累計動能榜</h2><span class="count" id="streakCount">— 天記錄</span></div>
+    <div id="streakList"><div class="empty">載入中…</div></div>
+  </section>
+
+  <div class="note">
+    <b>判定邏輯：</b>當日「外資買賣超股數」與「投信買賣超股數」皆進入全市場前 100 名的個股，再檢查最新 EMA5 &gt; EMA10 &gt; EMA20 是否成立（多頭排列）。<br><br>
+    <b>已知限制：</b>排名以「股數」估算，非「金額」；連續配息條件未納入自動判斷，建議搭配 CMoney 交叉確認；目前僅涵蓋上市（TWSE），上櫃預設關閉。<br><br>
+    資料由 GitHub Action 於每個交易日收盤後自動更新，本頁只讀取更新好的結果，不在瀏覽器直接抓證交所（避開 CORS）。
+  </div>
+
+  <footer>
+    <span>TWSE OPEN DATA</span>
+    <span id="recordDates">0 筆歷史記錄</span>
+  </footer>
+</div>
+
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+async function load(){
+  const stamp = document.getElementById('stamp');
+  stamp.textContent = '載入中…';
+  let data;
+  try{
+    const res = await fetch('./data.json?_=' + Date.now());  // 同源，破快取
+    data = await res.json();
+  }catch(e){
+    stamp.textContent = '讀取 data.json 失敗';
+    document.getElementById('todayList').innerHTML =
+      '<div class="empty">無法讀取資料，請確認 Action 已執行過至少一次</div>';
+    return;
+  }
+
+  document.getElementById('refDate').textContent = data.refDate || '--';
+  document.getElementById('stamp').textContent = '更新：' + (data.generatedAt || '--');
+  document.getElementById('recordDates').textContent = (data.totalRecords||0) + ' 筆歷史記錄';
+
+  // 當日名單
+  const today = data.today || [];
+  document.getElementById('todayCount').textContent = today.length + ' 檔';
+  const tl = document.getElementById('todayList');
+  tl.innerHTML = today.length ? today.map(r=>`
+    <div class="card">
+      <div class="card-top">
+        <div><span class="card-name">${esc(r.name)}</span><span class="card-code">${esc(r.code)}</span></div>
+        <div class="card-price">${r.close ?? '—'}</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag foreign">外資 #${r.foreignRank}</span>
+        <span class="tag trust">投信 #${r.trustRank}</span>
+        <span class="tag ema">EMA多頭排列</span>
+      </div>
+    </div>`).join('') : '<div class="empty">當日無符合全部條件的個股</div>';
+
+  // 五日累計榜
+  const dates = data.windowDates || [];
+  const streak = data.streak || [];
+  document.getElementById('streakCount').textContent = dates.length + ' 天記錄';
+  const sl = document.getElementById('streakList');
+  sl.innerHTML = (dates.length >= 2 && streak.length) ? streak.map((t,i)=>`
+    <div class="streak-card">
+      <div class="streak-top">
+        <div><span class="streak-rank">${String(i+1).padStart(2,'0')}</span>
+          <span class="card-name">${esc(t.name)}</span><span class="card-code">${esc(t.code)}</span></div>
+        <div class="card-price">${t.lastClose ?? '—'}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="streak-dots">
+          ${dates.map(d=>`<div class="dot ${t.days.includes(d)?'on':''}"></div>`).join('')}
+        </div>
+        <div class="streak-count">${t.count} / ${dates.length} 天</div>
+      </div>
+    </div>`).join('') : '<div class="empty">需累積至少 2 個交易日資料才會顯示排行</div>';
+}
+
+document.getElementById('refreshBtn').addEventListener('click', load);
+load();
+</script>
+</body>
+</html>
