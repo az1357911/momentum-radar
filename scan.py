@@ -175,15 +175,22 @@ def parse_institutional(rows, fields):
     return out
 
 
-# ---------- 個股月成交（算 EMA 用）----------
+# ---------- 個股日收盤（算均線用，帶日期以便還原股價）----------
+def _roc_iso(s):
+    """民國日期 '115/07/01' 或 '115年07月01日' → 西元 '2026-07-01'。"""
+    s = str(s).replace("年", "/").replace("月", "/").replace("日", "").strip()
+    y, m, d = s.split("/")
+    return f"{int(y) + 1911}-{int(m):02d}-{int(d):02d}"
+
+
 def fetch_month_closes(code, yyyymm01):
-    """抓某月份的每日收盤價（依日期由舊到新）。"""
+    """上市個股某月每日 (iso_date, 收盤價)，由舊到新。"""
     url = (f"https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY"
            f"?date={yyyymm01}&stockNo={code}&response=json")
     data = get_json(url)
-    closes = []
+    out = []
     if not data or not data.get("data") or not data.get("fields"):
-        return closes
+        return out
     fields = data["fields"]
     idx_close = field_index(fields, (["收盤價"], []), (["收盤"], []))
     if idx_close is None:
@@ -191,20 +198,23 @@ def fetch_month_closes(code, yyyymm01):
     for row in data["data"]:
         c = to_float(row[idx_close])
         if c is not None:
-            closes.append(c)
-    return closes
+            try:
+                out.append((_roc_iso(row[0]), c))
+            except Exception:
+                pass
+    return out
 
 
 def fetch_tpex_month_closes(code, ad_year_month):
-    """上櫃個股某月每日收盤（tradingStock，date 用西元 YYYY/MM/01；回應日期是民國）。"""
+    """上櫃個股某月每日 (iso_date, 收盤價)（tradingStock，date 用西元 YYYY/MM/01）。"""
     url = ("https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock"
            f"?code={code}&date={ad_year_month}&response=json&id=")
     data = get_json(url)
-    closes = []
+    out = []
     try:
         table = (data.get("tables") or [{}])[0]
     except Exception:
-        return closes
+        return out
     fields = table.get("fields") or []
     rows = table.get("data") or []
     idx_close = field_index(fields, (["收盤"], []))
@@ -214,15 +224,18 @@ def fetch_tpex_month_closes(code, ad_year_month):
         if idx_close < len(row):
             c = to_float(row[idx_close])
             if c is not None:
-                closes.append(c)
-    return closes
+                try:
+                    out.append((_roc_iso(row[0]), c))
+                except Exception:
+                    pass
+    return out
 
 
-def get_recent_closes(code, ref_date, market="TWSE", months=4):
+def get_recent_closes(code, ref_date, market="TWSE", months=6):
     """
-    取參考日往回 N 個月的收盤價，串成時間序列（舊→新）。
-    EMA20 要夠長的序列種子才穩定；只取 2 個月會讓 EMA 種子偏差、判斷飄移，
-    故預設抓 4 個月（約 80 個交易日）。上市走 STOCK_DAY、上櫃走 tradingStock。
+    取參考日往回 N 個月的 (iso_date, 收盤價)，由舊到新。
+    要算 SMA60（季線），序列需夠長，故預設抓 6 個月（約 120 個交易日）。
+    上市走 STOCK_DAY、上櫃走 tradingStock。
     """
     first = dt.datetime.strptime(ref_date, "%Y%m%d").replace(day=1)
     months_list = []
@@ -232,38 +245,99 @@ def get_recent_closes(code, ref_date, market="TWSE", months=4):
         d = (d - dt.timedelta(days=1)).replace(day=1)
     months_list.reverse()  # 舊 → 新
 
-    closes = []
+    dated = []
     for m in months_list:
         if market == "TPEx":
-            closes.extend(fetch_tpex_month_closes(code, m.strftime("%Y/%m/01")))
+            dated.extend(fetch_tpex_month_closes(code, m.strftime("%Y/%m/01")))
         else:
-            closes.extend(fetch_month_closes(code, m.strftime("%Y%m01")))
+            dated.extend(fetch_month_closes(code, m.strftime("%Y%m01")))
         time.sleep(REQUEST_PAUSE)
-    return closes
+    return dated
 
 
-def ema(values, period):
-    """標準 EMA：以前 period 筆的 SMA 當種子，再逐日遞推。"""
+def adjust_closes(dated, events):
+    """
+    還原股價：events=[(ex_iso, factor)]，factor=除權息參考價/前收盤(<1)。
+    某天的價格乘上所有『發生在它之後』的除權息 factor 連乘，把未來的除息缺口
+    往回還原，讓均線不被除權息跳空破壞（對齊 CMoney 用還原股價算均線）。
+    回傳還原後的收盤序列（舊→新）。
+    """
+    if not events:
+        return [px for _, px in dated]
+    out = []
+    for date, px in dated:
+        f = 1.0
+        for ex_iso, factor in events:
+            if ex_iso > date:
+                f *= factor
+        out.append(px * f)
+    return out
+
+
+def sma(values, period):
+    """簡單移動平均：最近 period 筆的平均。"""
     if len(values) < period:
         return None
-    sma = sum(values[:period]) / period
-    e = sma
-    k = 2 / (period + 1)
-    for v in values[period:]:
-        e = v * k + e * (1 - k)
-    return e
+    return sum(values[-period:]) / period
 
 
-def check_bullish(code, ref_date, market="TWSE"):
-    """回傳 (bullish: True/False/None, last_close)。None 代表資料不足。"""
-    closes = get_recent_closes(code, ref_date, market=market)
-    last = closes[-1] if closes else None
-    if len(closes) < 20:
+def check_bullish(code, ref_date, market="TWSE", ex_factors=None):
+    """
+    均線多頭排列（對齊 CMoney）：在『還原股價』下，股價 > 5MA > 20MA > 60MA。
+    回傳 (bullish: True/False/None, last_close)。None 代表資料不足。
+    """
+    dated = get_recent_closes(code, ref_date, market=market)
+    last = dated[-1][1] if dated else None
+    closes = adjust_closes(dated, (ex_factors or {}).get(code, []))
+    if len(closes) < 60:  # 季線(SMA60)需要 60 筆
         return None, last
-    e5, e10, e20 = ema(closes, 5), ema(closes, 10), ema(closes, 20)
-    if None in (e5, e10, e20):
+    s5, s20, s60 = sma(closes, 5), sma(closes, 20), sma(closes, 60)
+    if None in (s5, s20, s60):
         return None, last
-    return (e5 > e10 > e20), last
+    return (closes[-1] > s5 > s20 > s60), last
+
+
+# ---------- 除權除息（還原股價用）----------
+TWT49U_URL = "https://www.twse.com.tw/rwd/zh/exRight/TWT49U"
+
+
+def fetch_twse_ex_factors(ref_date, lookback_days=210):
+    """
+    上市除權除息計算結果表(TWT49U)近 ~7 個月 → {code: [(ex_iso, factor)]}。
+    factor = 除權息參考價 / 除權息前收盤價（<1，含除息與除權）。一次抓一段區間。
+    抓不到就回傳 {}，均線改用原始股價（不影響流程）。
+    """
+    end = ref_date
+    start = (dt.datetime.strptime(ref_date, "%Y%m%d")
+             - dt.timedelta(days=lookback_days)).strftime("%Y%m%d")
+    data = get_json(f"{TWT49U_URL}?startDate={start}&endDate={end}&response=json")
+    out = {}
+    if not data or not data.get("data") or not data.get("fields"):
+        print("  ! 除權除息表(TWT49U)抓取失敗，均線改用原始股價")
+        return out
+    F = data["fields"]
+
+    def col(name):
+        for i, f in enumerate(F):
+            if name in f.replace(" ", ""):
+                return i
+        return None
+
+    ic, idate, ib, ir = (col("股票代號"), col("資料日期"),
+                         col("除權息前收盤價"), col("除權息參考價"))
+    if None in (ic, idate, ib, ir):
+        print("  ! 除權除息表欄位對應失敗，均線改用原始股價")
+        return out
+    for r in data["data"]:
+        try:
+            before, ref = to_float(r[ib]), to_float(r[ir])
+            if before and ref and before > 0:
+                out.setdefault(str(r[ic]).strip(), []).append(
+                    (_roc_iso(r[idate]), ref / before))
+        except Exception:
+            pass
+    print(f"  除權除息(近7月)：{sum(len(v) for v in out.values())} 筆 / {len(out)} 檔（供還原股價）")
+    return out
 
 
 # ---------- 全市場成交均價（把買賣超股數換算成金額用）----------
@@ -511,11 +585,14 @@ def main():
     if len(inter) > MAX_EMA_CHECK:
         print(f"交集過多，只檢查綜合排名前 {MAX_EMA_CHECK} 檔的均線")
 
-    print("開始檢查 EMA5/10/20 多頭排列 ...")
+    # 除權除息 factor（上市，供還原股價算均線；上櫃代碼不在表內→用原始股價）
+    ex_factors = fetch_twse_ex_factors(ref_date)
+    print("開始檢查 均線多頭排列（還原股價：股價>5MA>20MA>60MA）...")
     passed = []
     for s in capped:
         market = s.get("market", "TWSE")
-        bullish, close = check_bullish(s["code"], ref_date, market=market)
+        bullish, close = check_bullish(s["code"], ref_date, market=market,
+                                       ex_factors=ex_factors)
         tag = ("多頭排列成立" if bullish is True
                else "資料不足" if bullish is None else "未成立")
         print(f"  [{market}] {s['code']} {s['name']} → {tag}")

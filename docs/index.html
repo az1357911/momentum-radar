@@ -73,7 +73,7 @@
   <header>
     <div class="eyebrow">籌碼 × 均線 · 每日自動建檔</div>
     <h1>五日動能雷達</h1>
-    <div class="sub">外資買超 ∩ 投信買超 ∩ EMA5&gt;10&gt;20 多頭排列</div>
+    <div class="sub">外資買超金額 ∩ 投信買超金額 ∩ 均線多頭排列</div>
     <div class="date-row"><span>資料交易日</span><b id="refDate" class="mono">--</b></div>
   </header>
 
@@ -94,8 +94,8 @@
   </section>
 
   <div class="note">
-    <b>判定邏輯：</b>當日「外資買賣超股數」與「投信買賣超股數」皆進入全市場前 100 名的個股，再檢查最新 EMA5 &gt; EMA10 &gt; EMA20 是否成立（多頭排列）。點上方<b>「只看有配息」</b>可再篩出最近年度有配發現金股利者（藍色「配息」標籤，數字為每股現金元）。<br><br>
-    <b>已知限制：</b>排名依外資/投信<b>買賣超金額</b>(股數×當日成交均價)，與 CMoney 一致；均線用 <b>EMA5&gt;10&gt;20</b>（與 CMoney 的「均線多頭排列」定義可能略有差異，名單不會 100% 相同）；「配息」目前僅判斷<b>最近一個年度</b>是否配現金（非連續 N 年）；已涵蓋<b>上市（TWSE）+ 上櫃（TPEx）</b>，兩市場合併排名，上櫃個股標「上櫃」。<br><br>
+    <b>判定邏輯：</b>當日「外資買賣超<b>金額</b>」與「投信買賣超<b>金額</b>」皆進入全市場前 100 名的個股，再檢查（<b>還原股價</b>下）<b>股價 &gt; 5MA &gt; 20MA &gt; 60MA</b>（均線多頭排列，貼近 CMoney）。點上方<b>「只看有配息」</b>可再篩出最近年度有配發現金股利者（藍色「配息」標籤，數字為每股現金元）。<br><br>
+    <b>已知限制：</b>排名依外資/投信<b>買賣超金額</b>(股數×當日成交均價)、均線用<b>還原股價的股價&gt;5MA&gt;20MA&gt;60MA</b>，皆對齊 CMoney（上櫃均線暫用原始股價，個別可能小差）；「配息」目前僅判斷<b>最近一個年度</b>是否配現金（非連續 N 年）；已涵蓋<b>上市（TWSE）+ 上櫃（TPEx）</b>，兩市場合併排名，上櫃標「上櫃」。<br><br>
     資料由 GitHub Action 於每個交易日收盤後自動更新，本頁只讀取更新好的結果，不在瀏覽器直接抓證交所（避開 CORS）。
   </div>
 
@@ -147,7 +147,7 @@ function render(){
       <div class="card-tags">
         <span class="tag foreign">外資 #${r.foreignRank}</span>
         <span class="tag trust">投信 #${r.trustRank}</span>
-        <span class="tag ema">EMA多頭排列</span>
+        <span class="tag ema">均線多頭</span>
         ${r.market==='TPEx' ? '<span class="tag otc">上櫃</span>' : ''}
         ${r.cashDiv ? `<span class="tag div">配息 ${r.cashDivAmt}元</span>` : ''}
       </div>
