@@ -16,13 +16,14 @@
 """
 
 import json
-import os
 import sys
 import time
 import datetime as dt
 from pathlib import Path
 
 import requests
+
+TAIPEI = dt.timezone(dt.timedelta(hours=8))  # 台北時區 (UTC+8)
 
 ROOT = Path(__file__).resolve().parent
 HISTORY_DIR = ROOT / "data" / "history"
@@ -122,7 +123,7 @@ def find_latest_trading_day():
     從今天(台北)往回找，最多找 8 天，回傳 (yyyymmdd, rows, fields)。
     找不到回傳 (None, None, None)。
     """
-    today = dt.datetime.utcnow() + dt.timedelta(hours=8)  # 台北時間
+    today = dt.datetime.now(TAIPEI)  # 台北時間
     for back in range(0, 8):
         d = today - dt.timedelta(days=back)
         if d.weekday() >= 5:  # 週六(5)、週日(6) 直接跳過
@@ -309,8 +310,7 @@ def main():
 
     # 輸出給前端
     payload = {
-        "generatedAt": (dt.datetime.utcnow() + dt.timedelta(hours=8)
-                        ).strftime("%Y-%m-%d %H:%M"),
+        "generatedAt": dt.datetime.now(TAIPEI).strftime("%Y-%m-%d %H:%M"),
         "refDate": iso_date,
         "windowDates": recent_dates,
         "today": passed,
