@@ -10,3 +10,10 @@ venv/
 
 # macOS
 .DS_Store
+
+# 你的全域 gitignore（~/.gitignore_global）有一條 "Workflows"，在 macOS
+# 大小寫不敏感下會誤擋整個 .github/workflows/ 資料夾，害 daily.yml 沒被 commit。
+# 這裡強制取消忽略，讓 GitHub Actions workflow 能進 repo。
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
