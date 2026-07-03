@@ -8,9 +8,9 @@
     "foreignAmt": 1969872327,
     "trustAmt": 674763546,
     "close": 6080.0,
-    "cashDiv": true,
-    "cashDivAmt": 25.0,
-    "divYear": 2025
+    "cashDiv": false,
+    "cashDivAmt": null,
+    "divYear": null
   },
   {
     "code": "6182",
@@ -24,6 +24,19 @@
     "cashDiv": true,
     "cashDivAmt": 2.5,
     "divYear": 2018
+  },
+  {
+    "code": "2382",
+    "name": "廣達",
+    "market": "TWSE",
+    "foreignRank": 29,
+    "trustRank": 10,
+    "foreignAmt": 460573078,
+    "trustAmt": 739366589,
+    "close": 377.0,
+    "cashDiv": false,
+    "cashDivAmt": null,
+    "divYear": null
   },
   {
     "code": "6223",
@@ -52,45 +65,6 @@
     "divYear": 2020
   },
   {
-    "code": "2885",
-    "name": "元大金",
-    "market": "TWSE",
-    "foreignRank": 30,
-    "trustRank": 53,
-    "foreignAmt": 451850632,
-    "trustAmt": 155377324,
-    "close": 67.2,
-    "cashDiv": true,
-    "cashDivAmt": 1.8,
-    "divYear": 2025
-  },
-  {
-    "code": "6257",
-    "name": "矽格",
-    "market": "TWSE",
-    "foreignRank": 42,
-    "trustRank": 74,
-    "foreignAmt": 324633722,
-    "trustAmt": 52084001,
-    "close": 254.5,
-    "cashDiv": true,
-    "cashDivAmt": 4.2,
-    "divYear": 2025
-  },
-  {
-    "code": "8028",
-    "name": "昇陽半導體",
-    "market": "TWSE",
-    "foreignRank": 58,
-    "trustRank": 71,
-    "foreignAmt": 242879699,
-    "trustAmt": 71012434,
-    "close": 334.5,
-    "cashDiv": true,
-    "cashDivAmt": 2.8,
-    "divYear": 2025
-  },
-  {
     "code": "6173",
     "name": "信昌電",
     "market": "TPEx",
@@ -102,70 +76,5 @@
     "cashDiv": true,
     "cashDivAmt": 4.3,
     "divYear": 2018
-  },
-  {
-    "code": "1402",
-    "name": "遠東新",
-    "market": "TWSE",
-    "foreignRank": 52,
-    "trustRank": 91,
-    "foreignAmt": 270700582,
-    "trustAmt": 30946673,
-    "close": 29.1,
-    "cashDiv": true,
-    "cashDivAmt": 1.25,
-    "divYear": 2025
-  },
-  {
-    "code": "1477",
-    "name": "聚陽",
-    "market": "TWSE",
-    "foreignRank": 92,
-    "trustRank": 66,
-    "foreignAmt": 143182682,
-    "trustAmt": 82421958,
-    "close": 228.5,
-    "cashDiv": true,
-    "cashDivAmt": 9.0,
-    "divYear": 2025
-  },
-  {
-    "code": "2855",
-    "name": "統一證",
-    "market": "TWSE",
-    "foreignRank": 73,
-    "trustRank": 86,
-    "foreignAmt": 187809722,
-    "trustAmt": 41017470,
-    "close": 51.9,
-    "cashDiv": true,
-    "cashDivAmt": 2.11,
-    "divYear": 2025
-  },
-  {
-    "code": "4766",
-    "name": "南寶",
-    "market": "TWSE",
-    "foreignRank": 83,
-    "trustRank": 85,
-    "foreignAmt": 169082721,
-    "trustAmt": 41793842,
-    "close": 370.5,
-    "cashDiv": true,
-    "cashDivAmt": 18.0,
-    "divYear": 2025
-  },
-  {
-    "code": "8016",
-    "name": "矽創",
-    "market": "TWSE",
-    "foreignRank": 99,
-    "trustRank": 75,
-    "foreignAmt": 134195733,
-    "trustAmt": 52045079,
-    "close": 334.0,
-    "cashDiv": true,
-    "cashDivAmt": 11.5,
-    "divYear": 2025
   }
 ]
