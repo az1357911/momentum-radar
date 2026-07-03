@@ -50,6 +50,7 @@
   .tag.trust{background:rgba(58,164,124,.14);color:var(--down);border:1px solid rgba(58,164,124,.3);}
   .tag.ema{background:rgba(227,162,58,.14);color:var(--amber);border:1px solid rgba(227,162,58,.3);}
   .tag.div{background:rgba(96,150,235,.16);color:#7FA8E8;border:1px solid rgba(96,150,235,.34);}
+  .tag.otc{background:rgba(150,110,220,.16);color:#B79BE8;border:1px solid rgba(150,110,220,.34);}
 
   .streak-card{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:14px 16px;margin-bottom:8px;}
   .streak-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
@@ -94,7 +95,7 @@
 
   <div class="note">
     <b>判定邏輯：</b>當日「外資買賣超股數」與「投信買賣超股數」皆進入全市場前 100 名的個股，再檢查最新 EMA5 &gt; EMA10 &gt; EMA20 是否成立（多頭排列）。點上方<b>「只看有配息」</b>可再篩出最近年度有配發現金股利者（藍色「配息」標籤，數字為每股現金元）。<br><br>
-    <b>已知限制：</b>排名依外資/投信<b>買賣超金額</b>(股數×當日成交均價)，與 CMoney 一致；均線用 <b>EMA5&gt;10&gt;20</b>（與 CMoney 的「均線多頭排列」定義可能略有差異，名單不會 100% 相同）；「配息」目前僅判斷<b>最近一個年度</b>是否配現金（非連續 N 年）；目前僅涵蓋上市（TWSE），上櫃預設關閉。<br><br>
+    <b>已知限制：</b>排名依外資/投信<b>買賣超金額</b>(股數×當日成交均價)，與 CMoney 一致；均線用 <b>EMA5&gt;10&gt;20</b>（與 CMoney 的「均線多頭排列」定義可能略有差異，名單不會 100% 相同）；「配息」目前僅判斷<b>最近一個年度</b>是否配現金（非連續 N 年）；已涵蓋<b>上市（TWSE）+ 上櫃（TPEx）</b>，兩市場合併排名，上櫃個股標「上櫃」。<br><br>
     資料由 GitHub Action 於每個交易日收盤後自動更新，本頁只讀取更新好的結果，不在瀏覽器直接抓證交所（避開 CORS）。
   </div>
 
@@ -147,6 +148,7 @@ function render(){
         <span class="tag foreign">外資 #${r.foreignRank}</span>
         <span class="tag trust">投信 #${r.trustRank}</span>
         <span class="tag ema">EMA多頭排列</span>
+        ${r.market==='TPEx' ? '<span class="tag otc">上櫃</span>' : ''}
         ${r.cashDiv ? `<span class="tag div">配息 ${r.cashDivAmt}元</span>` : ''}
       </div>
     </div>`).join('') : `<div class="empty">${onlyDiv ? '當日名單中沒有最近年度配現金的個股' : '當日無符合全部條件的個股'}</div>`;
@@ -162,6 +164,7 @@ function render(){
       <div class="streak-top">
         <div><span class="streak-rank">${String(i+1).padStart(2,'0')}</span>
           <span class="card-name">${esc(t.name)}</span><span class="card-code">${esc(t.code)}</span>
+          ${t.market==='TPEx' ? '<span class="tag otc">上櫃</span>' : ''}
           ${t.cashDiv ? '<span class="tag div">配息</span>' : ''}</div>
         <div class="card-price">${t.lastClose ?? '—'}</div>
       </div>

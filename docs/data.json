@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03 22:12",
+  "generatedAt": "2026-07-03 22:35",
   "refDate": "2026-07-03",
   "windowDates": [
     "2026-07-02",
@@ -11,7 +11,7 @@
       "name": "台光電",
       "market": "TWSE",
       "foreignRank": 2,
-      "trustRank": 11,
+      "trustRank": 12,
       "foreignAmt": 1969872327,
       "trustAmt": 674763546,
       "close": 6080.0,
@@ -23,7 +23,7 @@
       "code": "3017",
       "name": "奇鋐",
       "market": "TWSE",
-      "foreignRank": 14,
+      "foreignRank": 16,
       "trustRank": 7,
       "foreignAmt": 806579675,
       "trustAmt": 1089319109,
@@ -33,11 +33,24 @@
       "divYear": 2025
     },
     {
+      "code": "6182",
+      "name": "合晶",
+      "market": "TPEx",
+      "foreignRank": 24,
+      "trustRank": 8,
+      "foreignAmt": 582820358,
+      "trustAmt": 824126240,
+      "close": 163.0,
+      "cashDiv": true,
+      "cashDivAmt": 2.5,
+      "divYear": 2018
+    },
+    {
       "code": "2382",
       "name": "廣達",
       "market": "TWSE",
-      "foreignRank": 24,
-      "trustRank": 9,
+      "foreignRank": 29,
+      "trustRank": 10,
       "foreignAmt": 460573078,
       "trustAmt": 739366589,
       "close": 377.0,
@@ -46,11 +59,50 @@
       "divYear": 2025
     },
     {
+      "code": "3189",
+      "name": "景碩",
+      "market": "TWSE",
+      "foreignRank": 9,
+      "trustRank": 62,
+      "foreignAmt": 982573293,
+      "trustAmt": 115417867,
+      "close": 833.0,
+      "cashDiv": true,
+      "cashDivAmt": 1.75,
+      "divYear": 2025
+    },
+    {
+      "code": "6223",
+      "name": "旺矽",
+      "market": "TPEx",
+      "foreignRank": 51,
+      "trustRank": 27,
+      "foreignAmt": 287914878,
+      "trustAmt": 390479368,
+      "close": 7380.0,
+      "cashDiv": true,
+      "cashDivAmt": 4.5,
+      "divYear": 2020
+    },
+    {
+      "code": "5483",
+      "name": "中美晶",
+      "market": "TPEx",
+      "foreignRank": 8,
+      "trustRank": 73,
+      "foreignAmt": 1039588707,
+      "trustAmt": 69128824,
+      "close": 210.5,
+      "cashDiv": true,
+      "cashDivAmt": 5.5,
+      "divYear": 2020
+    },
+    {
       "code": "2885",
       "name": "元大金",
       "market": "TWSE",
-      "foreignRank": 25,
-      "trustRank": 47,
+      "foreignRank": 30,
+      "trustRank": 53,
       "foreignAmt": 451850632,
       "trustAmt": 155377324,
       "close": 67.2,
@@ -59,24 +111,11 @@
       "divYear": 2025
     },
     {
-      "code": "1717",
-      "name": "長興",
-      "market": "TWSE",
-      "foreignRank": 5,
-      "trustRank": 84,
-      "foreignAmt": 1101218309,
-      "trustAmt": 19724175,
-      "close": 81.6,
-      "cashDiv": true,
-      "cashDivAmt": 1.0,
-      "divYear": 2025
-    },
-    {
       "code": "6257",
       "name": "矽格",
       "market": "TWSE",
-      "foreignRank": 34,
-      "trustRank": 59,
+      "foreignRank": 42,
+      "trustRank": 75,
       "foreignAmt": 324633722,
       "trustAmt": 52084001,
       "close": 254.5,
@@ -88,8 +127,8 @@
       "code": "8028",
       "name": "昇陽半導體",
       "market": "TWSE",
-      "foreignRank": 46,
-      "trustRank": 57,
+      "foreignRank": 58,
+      "trustRank": 72,
       "foreignAmt": 242879699,
       "trustAmt": 71012434,
       "close": 334.5,
@@ -98,11 +137,24 @@
       "divYear": 2025
     },
     {
+      "code": "6173",
+      "name": "信昌電",
+      "market": "TPEx",
+      "foreignRank": 69,
+      "trustRank": 63,
+      "foreignAmt": 199033809,
+      "trustAmt": 100589580,
+      "close": 350.5,
+      "cashDiv": true,
+      "cashDivAmt": 4.3,
+      "divYear": 2018
+    },
+    {
       "code": "2892",
       "name": "第一金",
       "market": "TWSE",
-      "foreignRank": 69,
-      "trustRank": 45,
+      "foreignRank": 86,
+      "trustRank": 51,
       "foreignAmt": 161385472,
       "trustAmt": 181510207,
       "close": 32.4,
@@ -114,8 +166,8 @@
       "code": "1402",
       "name": "遠東新",
       "market": "TWSE",
-      "foreignRank": 40,
-      "trustRank": 76,
+      "foreignRank": 52,
+      "trustRank": 92,
       "foreignAmt": 270700582,
       "trustAmt": 30946673,
       "close": 29.1,
@@ -124,24 +176,11 @@
       "divYear": 2025
     },
     {
-      "code": "6213",
-      "name": "聯茂",
-      "market": "TWSE",
-      "foreignRank": 21,
-      "trustRank": 97,
-      "foreignAmt": 574615198,
-      "trustAmt": 6749278,
-      "close": 394.0,
-      "cashDiv": true,
-      "cashDivAmt": 3.0,
-      "divYear": 2025
-    },
-    {
       "code": "2890",
       "name": "永豐金",
       "market": "TWSE",
-      "foreignRank": 70,
-      "trustRank": 51,
+      "foreignRank": 88,
+      "trustRank": 65,
       "foreignAmt": 156343936,
       "trustAmt": 90993342,
       "close": 39.7,
@@ -153,8 +192,8 @@
       "code": "1477",
       "name": "聚陽",
       "market": "TWSE",
-      "foreignRank": 73,
-      "trustRank": 53,
+      "foreignRank": 92,
+      "trustRank": 67,
       "foreignAmt": 143182682,
       "trustAmt": 82421958,
       "close": 228.5,
@@ -166,8 +205,8 @@
       "code": "2855",
       "name": "統一證",
       "market": "TWSE",
-      "foreignRank": 58,
-      "trustRank": 71,
+      "foreignRank": 73,
+      "trustRank": 87,
       "foreignAmt": 187809722,
       "trustAmt": 41017470,
       "close": 51.9,
@@ -176,58 +215,20 @@
       "divYear": 2025
     },
     {
-      "code": "2395",
-      "name": "研華",
-      "market": "TWSE",
-      "foreignRank": 47,
-      "trustRank": 88,
-      "foreignAmt": 238973801,
-      "trustAmt": 17567115,
-      "close": 521.0,
-      "cashDiv": true,
-      "cashDivAmt": 11.2,
-      "divYear": 2025
-    },
-    {
       "code": "8016",
       "name": "矽創",
       "market": "TWSE",
-      "foreignRank": 78,
-      "trustRank": 60,
+      "foreignRank": 99,
+      "trustRank": 76,
       "foreignAmt": 134195733,
       "trustAmt": 52045079,
       "close": 334.0,
       "cashDiv": true,
       "cashDivAmt": 11.5,
       "divYear": 2025
-    },
-    {
-      "code": "2912",
-      "name": "統一超",
-      "market": "TWSE",
-      "foreignRank": 59,
-      "trustRank": 86,
-      "foreignAmt": 185319264,
-      "trustAmt": 18930685,
-      "close": 231.0,
-      "cashDiv": true,
-      "cashDivAmt": 9.0,
-      "divYear": 2025
     }
   ],
   "streak": [
-    {
-      "code": "1717",
-      "name": "長興",
-      "days": [
-        "2026-07-02",
-        "2026-07-03"
-      ],
-      "lastClose": 81.6,
-      "cashDiv": true,
-      "cashDivAmt": 1.0,
-      "count": 2
-    },
     {
       "code": "1303",
       "name": "南亞",
@@ -284,6 +285,17 @@
       "count": 1
     },
     {
+      "code": "1717",
+      "name": "長興",
+      "days": [
+        "2026-07-02"
+      ],
+      "lastClose": 81.6,
+      "cashDiv": false,
+      "cashDivAmt": null,
+      "count": 1
+    },
+    {
       "code": "1210",
       "name": "大成",
       "days": [
@@ -317,6 +329,17 @@
       "count": 1
     },
     {
+      "code": "6182",
+      "name": "合晶",
+      "days": [
+        "2026-07-03"
+      ],
+      "lastClose": 163.0,
+      "cashDiv": true,
+      "cashDivAmt": 2.5,
+      "count": 1
+    },
+    {
       "code": "2382",
       "name": "廣達",
       "days": [
@@ -328,6 +351,39 @@
       "count": 1
     },
     {
+      "code": "3189",
+      "name": "景碩",
+      "days": [
+        "2026-07-03"
+      ],
+      "lastClose": 833.0,
+      "cashDiv": true,
+      "cashDivAmt": 1.75,
+      "count": 1
+    },
+    {
+      "code": "6223",
+      "name": "旺矽",
+      "days": [
+        "2026-07-03"
+      ],
+      "lastClose": 7380.0,
+      "cashDiv": true,
+      "cashDivAmt": 4.5,
+      "count": 1
+    },
+    {
+      "code": "5483",
+      "name": "中美晶",
+      "days": [
+        "2026-07-03"
+      ],
+      "lastClose": 210.5,
+      "cashDiv": true,
+      "cashDivAmt": 5.5,
+      "count": 1
+    },
+    {
       "code": "2885",
       "name": "元大金",
       "days": [
@@ -336,50 +392,6 @@
       "lastClose": 67.2,
       "cashDiv": true,
       "cashDivAmt": 1.8,
-      "count": 1
-    },
-    {
-      "code": "6257",
-      "name": "矽格",
-      "days": [
-        "2026-07-03"
-      ],
-      "lastClose": 254.5,
-      "cashDiv": true,
-      "cashDivAmt": 4.2,
-      "count": 1
-    },
-    {
-      "code": "8028",
-      "name": "昇陽半導體",
-      "days": [
-        "2026-07-03"
-      ],
-      "lastClose": 334.5,
-      "cashDiv": true,
-      "cashDivAmt": 2.8,
-      "count": 1
-    },
-    {
-      "code": "2892",
-      "name": "第一金",
-      "days": [
-        "2026-07-03"
-      ],
-      "lastClose": 32.4,
-      "cashDiv": true,
-      "cashDivAmt": 1.3,
-      "count": 1
-    },
-    {
-      "code": "1402",
-      "name": "遠東新",
-      "days": [
-        "2026-07-03"
-      ],
-      "lastClose": 29.1,
-      "cashDiv": true,
-      "cashDivAmt": 1.25,
       "count": 1
     }
   ],

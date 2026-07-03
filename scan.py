@@ -39,9 +39,10 @@ MAX_EMA_CHECK = 30   # 交集後最多檢查幾檔的均線（避免請求過多
 STREAK_DAYS = 5      # 累計動能榜看幾個交易日
 REQUEST_PAUSE = 0.4  # 每次請求之間停頓秒數，對證交所友善一點
 
-# 上櫃（TPEx）預設關閉。TWSE 上市部分已完整可用。
-# 要開啟上櫃需自行確認 TPEx OpenAPI 端點後補上 fetch_tpex_* ，見 README。
-INCLUDE_TPEX = False
+# 上櫃（TPEx）：已驗證櫃買 OpenAPI 為當日資料，可與上市合併排名。
+# 三大法人 tpex_3insti_daily_trading、行情 tpex_mainboard_daily_close_quotes、
+# 股利 mopsfin_t187ap39_O、個股歷史 tradingStock，均為當日/可用。
+INCLUDE_TPEX = True
 
 session = requests.Session()
 session.headers.update({
@@ -169,6 +170,7 @@ def parse_institutional(rows, fields):
             "name": name,
             "foreign": to_int(row[idx_foreign]),
             "trust": to_int(row[idx_trust]),
+            "market": "TWSE",
         })
     return out
 
@@ -193,23 +195,49 @@ def fetch_month_closes(code, yyyymm01):
     return closes
 
 
-def get_recent_closes(code, ref_date, months=4):
+def fetch_tpex_month_closes(code, ad_year_month):
+    """上櫃個股某月每日收盤（tradingStock，date 用西元 YYYY/MM/01；回應日期是民國）。"""
+    url = ("https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock"
+           f"?code={code}&date={ad_year_month}&response=json&id=")
+    data = get_json(url)
+    closes = []
+    try:
+        table = (data.get("tables") or [{}])[0]
+    except Exception:
+        return closes
+    fields = table.get("fields") or []
+    rows = table.get("data") or []
+    idx_close = field_index(fields, (["收盤"], []))
+    if idx_close is None:
+        idx_close = 6  # 個股日成交：收盤在第 6 欄
+    for row in rows:
+        if idx_close < len(row):
+            c = to_float(row[idx_close])
+            if c is not None:
+                closes.append(c)
+    return closes
+
+
+def get_recent_closes(code, ref_date, market="TWSE", months=4):
     """
     取參考日往回 N 個月的收盤價，串成時間序列（舊→新）。
     EMA20 要夠長的序列種子才穩定；只取 2 個月會讓 EMA 種子偏差、判斷飄移，
-    故預設抓 4 個月（約 80 個交易日）。
+    故預設抓 4 個月（約 80 個交易日）。上市走 STOCK_DAY、上櫃走 tradingStock。
     """
     first = dt.datetime.strptime(ref_date, "%Y%m%d").replace(day=1)
-    yms = []
+    months_list = []
     d = first
     for _ in range(months):
-        yms.append(d.strftime("%Y%m01"))
+        months_list.append(d)
         d = (d - dt.timedelta(days=1)).replace(day=1)
-    yms.reverse()  # 舊 → 新
+    months_list.reverse()  # 舊 → 新
 
     closes = []
-    for ym in yms:
-        closes.extend(fetch_month_closes(code, ym))
+    for m in months_list:
+        if market == "TPEx":
+            closes.extend(fetch_tpex_month_closes(code, m.strftime("%Y/%m/01")))
+        else:
+            closes.extend(fetch_month_closes(code, m.strftime("%Y%m01")))
         time.sleep(REQUEST_PAUSE)
     return closes
 
@@ -226,9 +254,9 @@ def ema(values, period):
     return e
 
 
-def check_bullish(code, ref_date):
+def check_bullish(code, ref_date, market="TWSE"):
     """回傳 (bullish: True/False/None, last_close)。None 代表資料不足。"""
-    closes = get_recent_closes(code, ref_date)
+    closes = get_recent_closes(code, ref_date, market=market)
     last = closes[-1] if closes else None
     if len(closes) < 20:
         return None, last
@@ -282,6 +310,111 @@ def fetch_vwap_map():
         vol = to_float(row[ivol].strip().strip('"'))
         if code and val and vol and vol > 0:
             out[code] = val / vol
+    return out
+
+
+# ---------- 上櫃（TPEx / 櫃買中心）----------
+# 全部走櫃買 OpenAPI（實測為『當日』資料，與上市同一天，可合併排名），
+# 個股歷史收盤走 tradingStock。欄位一律用名稱比對。
+TPEX_INSTI_URL = "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading"
+TPEX_QUOTES_URL = "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
+TPEX_DIV_URL = "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap39_O"
+
+
+def _roc_date(yyyymmdd):
+    """20260703 -> '1150703'（民國）。"""
+    return f"{int(yyyymmdd[:4]) - 1911}{yyyymmdd[4:]}"
+
+
+def _pick_key(keys, *must, forbid=()):
+    """在 keys 裡找第一個（去空白後）含所有 must、不含任何 forbid 的鍵名。"""
+    for k in keys:
+        kk = k.replace(" ", "")
+        if all(m in kk for m in must) and not any(f in kk for f in forbid):
+            return k
+    return None
+
+
+def fetch_tpex_institutional(ref_date):
+    """上櫃三大法人（openapi，當日）。回傳 [{code,name,foreign,trust,market:'TPEx'}]。"""
+    data = get_json(TPEX_INSTI_URL)
+    if not isinstance(data, list) or not data:
+        print("  ! 上櫃三大法人抓取失敗，略過上櫃")
+        return []
+    keys = list(data[0].keys())
+    kdate = _pick_key(keys, "Date")
+    kcode = _pick_key(keys, "SecuritiesCompanyCode") or _pick_key(keys, "Code")
+    kname = _pick_key(keys, "CompanyName")
+    # 外陸資(不含外資自營商)買賣超：含 Foreign+Mainland+excluded+Difference
+    kforeign = _pick_key(keys, "Foreign", "Mainland", "excluded", "Difference")
+    ktrust = _pick_key(keys, "InvestmentTrust", "Difference")
+    if None in (kcode, kname, kforeign, ktrust):
+        print("  ! 上櫃三大法人欄位對應失敗，略過上櫃")
+        return []
+    roc = _roc_date(ref_date)
+    out = []
+    for r in data:
+        if kdate and str(r.get(kdate)).strip() != roc:
+            continue  # 只取與上市同一交易日，避免混到不同日期
+        code = str(r.get(kcode, "")).strip()
+        if not code or not code[0].isdigit():
+            continue
+        out.append({
+            "code": code,
+            "name": str(r.get(kname, "")).strip(),
+            "foreign": to_int(r.get(kforeign)),
+            "trust": to_int(r.get(ktrust)),
+            "market": "TPEx",
+        })
+    print(f"  上櫃三大法人：{len(out)} 檔"
+          if out else f"  ! 上櫃當日({roc})無三大法人資料，略過上櫃")
+    return out
+
+
+def fetch_tpex_vwap_map(ref_date):
+    """上櫃每日行情 → {code: 均價(Average)}。"""
+    data = get_json(TPEX_QUOTES_URL)
+    if not isinstance(data, list) or not data:
+        return {}
+    keys = list(data[0].keys())
+    kdate = _pick_key(keys, "Date")
+    kcode = _pick_key(keys, "SecuritiesCompanyCode") or _pick_key(keys, "Code")
+    kavg = _pick_key(keys, "Average")
+    if None in (kcode, kavg):
+        return {}
+    roc = _roc_date(ref_date)
+    out = {}
+    for r in data:
+        if kdate and str(r.get(kdate)).strip() != roc:
+            continue
+        code = str(r.get(kcode, "")).strip()
+        avg = to_float(r.get(kavg))
+        if code and avg:
+            out[code] = avg
+    return out
+
+
+def fetch_tpex_cash_dividend_map():
+    """上櫃股利分派 (mopsfin_t187ap39_O) → {code:{amt,year}}，邏輯同上市。"""
+    data = get_json(TPEX_DIV_URL)
+    if not isinstance(data, list) or not data:
+        return {}
+    cash_keys = [k for k in data[0].keys() if "現金" in k and "元/股" in k]
+    if not cash_keys:
+        return {}
+    out = {}
+    for r in data:
+        code = str(r.get("公司代號", "")).strip()
+        if not code:
+            continue
+        amt = sum((to_float(r.get(k)) or 0) for k in cash_keys)
+        cur = out.get(code)
+        if cur is None or amt > cur["amt"]:
+            try:
+                year_ad = int(r.get("股利年度")) + 1911
+            except Exception:
+                year_ad = None
+            out[code] = {"amt": round(amt, 2), "year": year_ad}
     return out
 
 
@@ -346,7 +479,10 @@ def main():
         sys.exit(1)
 
     # 把『買賣超股數』換算成『買賣超金額』(股數 × 當日成交均價)，對齊 CMoney 的金額排名。
+    # 上市走 STOCK_DAY_ALL、上櫃走櫃買行情(Average)，合併成同一張均價表 → 全市場一起排名。
     vwap = fetch_vwap_map()
+    if INCLUDE_TPEX:
+        vwap.update(fetch_tpex_vwap_map(ref_date))
     if vwap:
         for s in all_stocks:
             p = vwap.get(s["code"])
@@ -378,15 +514,16 @@ def main():
     print("開始檢查 EMA5/10/20 多頭排列 ...")
     passed = []
     for s in capped:
-        bullish, close = check_bullish(s["code"], ref_date)
+        market = s.get("market", "TWSE")
+        bullish, close = check_bullish(s["code"], ref_date, market=market)
         tag = ("多頭排列成立" if bullish is True
                else "資料不足" if bullish is None else "未成立")
-        print(f"  {s['code']} {s['name']} → {tag}")
+        print(f"  [{market}] {s['code']} {s['name']} → {tag}")
         if bullish is True:
             passed.append({
                 "code": s["code"],
                 "name": s["name"],
-                "market": "TWSE",
+                "market": market,
                 "foreignRank": foreign_rank[s["code"]],
                 "trustRank": trust_rank[s["code"]],
                 "foreignAmt": s.get("foreignAmt"),  # 買賣超金額(元)，前端可顯示
@@ -396,6 +533,8 @@ def main():
 
     # 配息標記：最近年度是否配現金股利（前端自選按鈕「只看有配息」用）
     div_map = fetch_cash_dividend_map() if passed else {}
+    if passed and INCLUDE_TPEX:
+        div_map.update(fetch_tpex_cash_dividend_map())  # 上櫃股利併入（代碼不重疊）
     for s in passed:
         info = div_map.get(s["code"])
         s["cashDiv"] = bool(info and info["amt"] > 0)
@@ -421,6 +560,7 @@ def main():
         for r in day:
             t = tally.setdefault(r["code"], {
                 "code": r["code"], "name": r["name"],
+                "market": r.get("market", "TWSE"),
                 "days": [], "lastClose": r.get("close"),
                 "cashDiv": r.get("cashDiv", False),
                 "cashDivAmt": r.get("cashDivAmt"),
