@@ -229,6 +229,45 @@ def check_bullish(code, ref_date):
     return (e5 > e10 > e20), last
 
 
+# ---------- 股利（自選按鈕「只看有配息」用）----------
+DIVIDEND_URL = "https://openapi.twse.com.tw/v1/opendata/t187ap45_L"
+
+
+def fetch_cash_dividend_map():
+    """
+    抓上市公司股利分派 (t187ap45_L)，回傳 {code: {"amt": float, "year": 西元int}}。
+    amt = 每股現金股利合計（盈餘分配 + 法定盈餘公積 + 資本公積 三欄相加）。
+    同一家可能有多筆（不同期別/年度），取現金合計最大的那筆，避免抓到 0 元的預告筆。
+    欄位一律用「名稱」比對（含『現金』且『元/股』），不用寫死 index。
+    注意：這支官方 OpenAPI 只有『當年度』資料，故僅供「最近年度是否配現金」判斷；
+    若要「連續 N 年」需另接歷史來源。抓不到就回傳 {}，不影響主流程（配息只是附加標記）。
+    """
+    data = get_json(DIVIDEND_URL)
+    if not isinstance(data, list) or not data:
+        print("  ! 股利資料(t187ap45_L)抓取失敗，本次略過配息標記")
+        return {}
+    cash_keys = [k for k in data[0].keys() if "現金" in k and "元/股" in k]
+    if not cash_keys:
+        print("  ! 股利欄位對應失敗，本次略過配息標記")
+        return {}
+    out = {}
+    for r in data:
+        code = str(r.get("公司代號", "")).strip()
+        if not code:
+            continue
+        amt = sum((to_float(r.get(k)) or 0) for k in cash_keys)
+        cur = out.get(code)
+        if cur is None or amt > cur["amt"]:
+            try:
+                year_ad = int(r.get("股利年度")) + 1911
+            except Exception:
+                year_ad = None
+            out[code] = {"amt": round(amt, 2), "year": year_ad}
+    n_paid = sum(1 for v in out.values() if v["amt"] > 0)
+    print(f"  股利表：{len(out)} 家上市公司，其中 {n_paid} 家最近年度有配現金")
+    return out
+
+
 # ---------- 主流程 ----------
 def main():
     print("=== 五日動能雷達 建檔開始 ===")
@@ -282,6 +321,17 @@ def main():
                 "close": close,
             })
 
+    # 配息標記：最近年度是否配現金股利（前端自選按鈕「只看有配息」用）
+    div_map = fetch_cash_dividend_map() if passed else {}
+    for s in passed:
+        info = div_map.get(s["code"])
+        s["cashDiv"] = bool(info and info["amt"] > 0)
+        s["cashDivAmt"] = info["amt"] if info else None
+        s["divYear"] = info["year"] if info else None
+    if passed:
+        n_div = sum(1 for s in passed if s["cashDiv"])
+        print(f"配息標記：{len(passed)} 檔通過名單中，{n_div} 檔最近年度有配現金")
+
     iso_date = dt.datetime.strptime(ref_date, "%Y%m%d").strftime("%Y-%m-%d")
 
     # 寫入當日歷史（供跨日累計）
@@ -299,10 +349,16 @@ def main():
             t = tally.setdefault(r["code"], {
                 "code": r["code"], "name": r["name"],
                 "days": [], "lastClose": r.get("close"),
+                "cashDiv": r.get("cashDiv", False),
+                "cashDivAmt": r.get("cashDivAmt"),
             })
             t["days"].append(date)
             if r.get("close") is not None:
                 t["lastClose"] = r["close"]
+            # dates 由舊到新，讓最近一天的配息資訊覆蓋
+            if "cashDiv" in r:
+                t["cashDiv"] = r.get("cashDiv", False)
+                t["cashDivAmt"] = r.get("cashDivAmt")
 
     streak = sorted(tally.values(), key=lambda t: len(t["days"]), reverse=True)[:15]
     for t in streak:
