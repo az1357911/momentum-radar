@@ -37,7 +37,8 @@ DOCS_DIR.mkdir(parents=True, exist_ok=True)
 TOP_N = 100          # 外資 / 投信 各取前幾名
 MAX_EMA_CHECK = 30   # 交集後最多檢查幾檔的均線（避免請求過多）
 STREAK_DAYS = 5      # 累計動能榜看幾個交易日
-REQUEST_PAUSE = 0.4  # 每次請求之間停頓秒數，對證交所友善一點
+REQUEST_PAUSE = 0.8  # 每次請求之間停頓秒數。GitHub 機房 IP 打太快會被證交所擋，放慢一點
+MIN_DATA_OK_RATIO = 0.7  # 交集個股中，能取得足夠均線資料的比例低於此 → 判定被限流、不覆蓋資料
 
 # 上櫃（TPEx）：已驗證櫃買 OpenAPI 為當日資料，可與上市合併排名。
 # 三大法人 tpex_3insti_daily_trading、行情 tpex_mainboard_daily_close_quotes、
@@ -54,17 +55,18 @@ session.headers.update({
 })
 
 
-def get_json(url, tries=4):
-    """帶重試的 GET JSON。證交所偶爾會擋或逾時，多試幾次。"""
+def get_json(url, tries=5):
+    """帶重試的 GET JSON。證交所被限流時，用漸進式退避等它解除（3,6,12,20s）。"""
     last_err = None
     for i in range(tries):
         try:
-            r = session.get(url, timeout=20)
+            r = session.get(url, timeout=25)
             r.raise_for_status()
             return r.json()
         except Exception as e:  # noqa
             last_err = e
-            time.sleep(1.5 * (i + 1))
+            if i < tries - 1:
+                time.sleep(min(3 * (2 ** i), 20))  # 3,6,12,20,20 — 給限流時間解除
     print(f"  ! 取得失敗 {url}\n    {last_err}")
     return None
 
@@ -231,10 +233,11 @@ def fetch_tpex_month_closes(code, ad_year_month):
     return out
 
 
-def get_recent_closes(code, ref_date, market="TWSE", months=6):
+def get_recent_closes(code, ref_date, market="TWSE", months=5):
     """
     取參考日往回 N 個月的 (iso_date, 收盤價)，由舊到新。
-    要算 SMA60（季線），序列需夠長，故預設抓 6 個月（約 120 個交易日）。
+    要算 SMA60（季線）需 ≥60 筆；抓 5 個月（約 100 個交易日）留足緩衝，
+    同時比 6 個月少一批請求、降低被證交所限流的機會。
     上市走 STOCK_DAY、上櫃走 tradingStock。
     """
     first = dt.datetime.strptime(ref_date, "%Y%m%d").replace(day=1)
@@ -589,6 +592,7 @@ def main():
     ex_factors = fetch_twse_ex_factors(ref_date)
     print("開始檢查 均線多頭排列（還原股價：股價>5MA>20MA>60MA）...")
     passed = []
+    insufficient = 0
     for s in capped:
         market = s.get("market", "TWSE")
         bullish, close = check_bullish(s["code"], ref_date, market=market,
@@ -596,6 +600,8 @@ def main():
         tag = ("多頭排列成立" if bullish is True
                else "資料不足" if bullish is None else "未成立")
         print(f"  [{market}] {s['code']} {s['name']} → {tag}")
+        if bullish is None:
+            insufficient += 1
         if bullish is True:
             passed.append({
                 "code": s["code"],
@@ -607,6 +613,15 @@ def main():
                 "trustAmt": s.get("trustAmt"),
                 "close": close,
             })
+
+    # 限流防護：若太多檔抓不到足夠均線資料（被證交所限流），不要用這份殘缺名單
+    # 覆蓋掉上一份好資料 —— 讓 Action 變紅、網站維持原樣，比默默貼出錯名單好。
+    checked = len(capped)
+    if checked and (checked - insufficient) / checked < MIN_DATA_OK_RATIO:
+        print(f"! {insufficient}/{checked} 檔均線資料不足 → 極可能被證交所限流機房 IP。")
+        print("  本次『不覆蓋』資料（保留上一份好名單），Action 標記失敗。")
+        print("  對策：稍後重跑；或改在台灣 IP 的電腦定時跑 scan.py 後 push。")
+        sys.exit(1)
 
     # 配息標記：最近年度是否配現金股利（前端自選按鈕「只看有配息」用）
     div_map = fetch_cash_dividend_map() if passed else {}
