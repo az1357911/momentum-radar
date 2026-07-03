@@ -17,6 +17,7 @@
 
 import json
 import os
+import sys
 import time
 import datetime as dt
 from pathlib import Path
@@ -232,8 +233,10 @@ def main():
     print("=== 五日動能雷達 建檔開始 ===")
     ref_date, rows, fields = find_latest_trading_day()
     if not rows:
-        print("找不到可用交易日資料，結束（可能非交易日或連線被擋）。")
-        return
+        print("找不到可用交易日資料。")
+        print("  近 8 天都抓不到 T86 → 極可能是證交所擋掉此機房 IP（GitHub Actions 常見）。")
+        print("  對策：改在自己的 Windows/台灣 IP 電腦定時跑 scan.py 後 push（見 README）。")
+        sys.exit(1)  # 讓 Action 明確變紅，不要假裝成功
 
     all_stocks = parse_institutional(rows, fields)
     if INCLUDE_TPEX:
@@ -243,8 +246,8 @@ def main():
             print(f"  ! 上櫃資料略過：{e}")
 
     if not all_stocks:
-        print("解析後無資料，結束。")
-        return
+        print("解析後無資料（欄位對應可能失敗），結束。")
+        sys.exit(1)
 
     # 排名（以股數估算，非金額）
     by_foreign = sorted(all_stocks, key=lambda x: x["foreign"], reverse=True)[:TOP_N]
