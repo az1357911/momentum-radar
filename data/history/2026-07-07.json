@@ -1,0 +1,80 @@
+[
+  {
+    "code": "2458",
+    "name": "義隆",
+    "market": "TWSE",
+    "foreignRank": 14,
+    "trustRank": 31,
+    "foreignAmt": 1021627202,
+    "trustAmt": 308413600,
+    "close": 188.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.42,
+    "divYear": 2025
+  },
+  {
+    "code": "3413",
+    "name": "京鼎",
+    "market": "TWSE",
+    "foreignRank": 33,
+    "trustRank": 13,
+    "foreignAmt": 447931531,
+    "trustAmt": 527654504,
+    "close": 344.0,
+    "cashDiv": true,
+    "cashDivAmt": 11.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2892",
+    "name": "第一金",
+    "market": "TWSE",
+    "foreignRank": 37,
+    "trustRank": 38,
+    "foreignAmt": 405548862,
+    "trustAmt": 256970200,
+    "close": 33.3,
+    "cashDiv": true,
+    "cashDivAmt": 1.3,
+    "divYear": 2025
+  },
+  {
+    "code": "2885",
+    "name": "元大金",
+    "market": "TWSE",
+    "foreignRank": 35,
+    "trustRank": 57,
+    "foreignAmt": 444823091,
+    "trustAmt": 114407587,
+    "close": 69.8,
+    "cashDiv": true,
+    "cashDivAmt": 1.8,
+    "divYear": 2025
+  },
+  {
+    "code": "1477",
+    "name": "聚陽",
+    "market": "TWSE",
+    "foreignRank": 40,
+    "trustRank": 63,
+    "foreignAmt": 378702957,
+    "trustAmt": 91179964,
+    "close": 231.5,
+    "cashDiv": true,
+    "cashDivAmt": 9.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2890",
+    "name": "永豐金",
+    "market": "TWSE",
+    "foreignRank": 47,
+    "trustRank": 61,
+    "foreignAmt": 344277029,
+    "trustAmt": 100111237,
+    "close": 41.1,
+    "cashDiv": true,
+    "cashDivAmt": 1.1,
+    "divYear": 2025
+  }
+]
