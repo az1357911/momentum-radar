@@ -47,9 +47,9 @@
     "foreignAmt": 225347659,
     "trustAmt": 482739977,
     "close": 36.85,
-    "cashDiv": false,
-    "cashDivAmt": null,
-    "divYear": null
+    "cashDiv": true,
+    "cashDivAmt": 1.0,
+    "divYear": 2025
   },
   {
     "code": "2356",
@@ -60,9 +60,35 @@
     "foreignAmt": 265046373,
     "trustAmt": 145277626,
     "close": 69.8,
-    "cashDiv": false,
-    "cashDivAmt": null,
-    "divYear": null
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2637",
+    "name": "慧洋-KY",
+    "market": "TWSE",
+    "foreignRank": 49,
+    "trustRank": 44,
+    "foreignAmt": 296316708,
+    "trustAmt": 65275555,
+    "close": 83.0,
+    "cashDiv": true,
+    "cashDivAmt": 3.5,
+    "divYear": 2025
+  },
+  {
+    "code": "2884",
+    "name": "玉山金",
+    "market": "TWSE",
+    "foreignRank": 36,
+    "trustRank": 87,
+    "foreignAmt": 408779561,
+    "trustAmt": 12621412,
+    "close": 34.75,
+    "cashDiv": true,
+    "cashDivAmt": 1.4,
+    "divYear": 2025
   },
   {
     "code": "2379",
@@ -73,22 +99,22 @@
     "foreignAmt": 525467578,
     "trustAmt": 8525235,
     "close": 840.0,
-    "cashDiv": false,
-    "cashDivAmt": null,
-    "divYear": null
+    "cashDiv": true,
+    "cashDivAmt": 25.0,
+    "divYear": 2025
   },
   {
-    "code": "2458",
-    "name": "義隆",
+    "code": "2886",
+    "name": "兆豐金",
     "market": "TWSE",
-    "foreignRank": 80,
-    "trustRank": 55,
-    "foreignAmt": 123238071,
-    "trustAmt": 43693626,
-    "close": 189.0,
-    "cashDiv": false,
-    "cashDivAmt": null,
-    "divYear": null
+    "foreignRank": 67,
+    "trustRank": 70,
+    "foreignAmt": 164787094,
+    "trustAmt": 18856442,
+    "close": 46.7,
+    "cashDiv": true,
+    "cashDivAmt": 1.75,
+    "divYear": 2025
   },
   {
     "code": "3189",
@@ -99,8 +125,47 @@
     "foreignAmt": 159355533,
     "trustAmt": 18575031,
     "close": 795.0,
-    "cashDiv": false,
-    "cashDivAmt": null,
-    "divYear": null
+    "cashDiv": true,
+    "cashDivAmt": 1.75,
+    "divYear": 2025
+  },
+  {
+    "code": "3005",
+    "name": "神基",
+    "market": "TWSE",
+    "foreignRank": 45,
+    "trustRank": 97,
+    "foreignAmt": 326416095,
+    "trustAmt": 7191653,
+    "close": 112.0,
+    "cashDiv": true,
+    "cashDivAmt": 6.8,
+    "divYear": 2025
+  },
+  {
+    "code": "5876",
+    "name": "上海商銀",
+    "market": "TWSE",
+    "foreignRank": 87,
+    "trustRank": 68,
+    "foreignAmt": 105195199,
+    "trustAmt": 19970575,
+    "close": 42.8,
+    "cashDiv": true,
+    "cashDivAmt": 1.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2006",
+    "name": "東和鋼鐵",
+    "market": "TWSE",
+    "foreignRank": 83,
+    "trustRank": 79,
+    "foreignAmt": 118179494,
+    "trustAmt": 16592265,
+    "close": 70.2,
+    "cashDiv": true,
+    "cashDivAmt": 4.3,
+    "divYear": 2025
   }
 ]
