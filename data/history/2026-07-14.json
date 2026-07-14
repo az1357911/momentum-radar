@@ -1,0 +1,67 @@
+[
+  {
+    "code": "5483",
+    "name": "中美晶",
+    "market": "TPEx",
+    "foreignRank": 24,
+    "trustRank": 17,
+    "foreignAmt": 954481767,
+    "trustAmt": 303104410,
+    "close": 253.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.5,
+    "divYear": 2020
+  },
+  {
+    "code": "5269",
+    "name": "祥碩",
+    "market": "TWSE",
+    "foreignRank": 50,
+    "trustRank": 48,
+    "foreignAmt": 464608806,
+    "trustAmt": 62574379,
+    "close": 1525.0,
+    "cashDiv": true,
+    "cashDivAmt": 45.0,
+    "divYear": 2025
+  },
+  {
+    "code": "3532",
+    "name": "台勝科",
+    "market": "TWSE",
+    "foreignRank": 97,
+    "trustRank": 8,
+    "foreignAmt": 145562671,
+    "trustAmt": 1180839699,
+    "close": 510.0,
+    "cashDiv": true,
+    "cashDivAmt": 1.0,
+    "divYear": 2025
+  },
+  {
+    "code": "5876",
+    "name": "上海商銀",
+    "market": "TWSE",
+    "foreignRank": 83,
+    "trustRank": 36,
+    "foreignAmt": 188472893,
+    "trustAmt": 77998510,
+    "close": 44.7,
+    "cashDiv": true,
+    "cashDivAmt": 1.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2912",
+    "name": "統一超",
+    "market": "TWSE",
+    "foreignRank": 86,
+    "trustRank": 67,
+    "foreignAmt": 179039440,
+    "trustAmt": 44902551,
+    "close": 242.0,
+    "cashDiv": true,
+    "cashDivAmt": 9.0,
+    "divYear": 2025
+  }
+]
