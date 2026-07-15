@@ -1,0 +1,93 @@
+[
+  {
+    "code": "3711",
+    "name": "日月光投控",
+    "market": "TWSE",
+    "foreignRank": 4,
+    "trustRank": 9,
+    "foreignAmt": 2900340624,
+    "trustAmt": 723425562,
+    "close": 683.0,
+    "cashDiv": true,
+    "cashDivAmt": 6.6,
+    "divYear": 2025
+  },
+  {
+    "code": "6505",
+    "name": "台塑化",
+    "market": "TWSE",
+    "foreignRank": 22,
+    "trustRank": 30,
+    "foreignAmt": 877207770,
+    "trustAmt": 136936287,
+    "close": 72.8,
+    "cashDiv": true,
+    "cashDivAmt": 1.2,
+    "divYear": 2025
+  },
+  {
+    "code": "3532",
+    "name": "台勝科",
+    "market": "TWSE",
+    "foreignRank": 69,
+    "trustRank": 25,
+    "foreignAmt": 251038260,
+    "trustAmt": 252319919,
+    "close": 523.0,
+    "cashDiv": true,
+    "cashDivAmt": 1.0,
+    "divYear": 2025
+  },
+  {
+    "code": "6414",
+    "name": "樺漢",
+    "market": "TWSE",
+    "foreignRank": 68,
+    "trustRank": 45,
+    "foreignAmt": 251323225,
+    "trustAmt": 41607230,
+    "close": 394.5,
+    "cashDiv": true,
+    "cashDivAmt": 14.0,
+    "divYear": 2025
+  },
+  {
+    "code": "5871",
+    "name": "中租-KY",
+    "market": "TWSE",
+    "foreignRank": 84,
+    "trustRank": 33,
+    "foreignAmt": 177073547,
+    "trustAmt": 90680292,
+    "close": 119.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.8,
+    "divYear": 2025
+  },
+  {
+    "code": "6257",
+    "name": "矽格",
+    "market": "TWSE",
+    "foreignRank": 51,
+    "trustRank": 78,
+    "foreignAmt": 366581256,
+    "trustAmt": 4126761,
+    "close": 237.5,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2025
+  },
+  {
+    "code": "3189",
+    "name": "景碩",
+    "market": "TWSE",
+    "foreignRank": 88,
+    "trustRank": 48,
+    "foreignAmt": 166794937,
+    "trustAmt": 28856766,
+    "close": 845.0,
+    "cashDiv": true,
+    "cashDivAmt": 1.75,
+    "divYear": 2025
+  }
+]

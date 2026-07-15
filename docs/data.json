@@ -1,77 +1,103 @@
 {
-  "generatedAt": "2026-07-14 19:21",
-  "refDate": "2026-07-14",
+  "generatedAt": "2026-07-15 19:26",
+  "refDate": "2026-07-15",
   "windowDates": [
-    "2026-07-07",
     "2026-07-08",
     "2026-07-09",
     "2026-07-13",
-    "2026-07-14"
+    "2026-07-14",
+    "2026-07-15"
   ],
   "today": [
     {
-      "code": "5483",
-      "name": "中美晶",
-      "market": "TPEx",
-      "foreignRank": 24,
-      "trustRank": 17,
-      "foreignAmt": 954481767,
-      "trustAmt": 303104410,
-      "close": 253.0,
+      "code": "3711",
+      "name": "日月光投控",
+      "market": "TWSE",
+      "foreignRank": 4,
+      "trustRank": 9,
+      "foreignAmt": 2900340624,
+      "trustAmt": 723425562,
+      "close": 683.0,
       "cashDiv": true,
-      "cashDivAmt": 5.5,
-      "divYear": 2020
+      "cashDivAmt": 6.6,
+      "divYear": 2025
     },
     {
-      "code": "5269",
-      "name": "祥碩",
+      "code": "6505",
+      "name": "台塑化",
       "market": "TWSE",
-      "foreignRank": 50,
-      "trustRank": 48,
-      "foreignAmt": 464608806,
-      "trustAmt": 62574379,
-      "close": 1525.0,
+      "foreignRank": 22,
+      "trustRank": 30,
+      "foreignAmt": 877207770,
+      "trustAmt": 136936287,
+      "close": 72.8,
       "cashDiv": true,
-      "cashDivAmt": 45.0,
+      "cashDivAmt": 1.2,
       "divYear": 2025
     },
     {
       "code": "3532",
       "name": "台勝科",
       "market": "TWSE",
-      "foreignRank": 97,
-      "trustRank": 8,
-      "foreignAmt": 145562671,
-      "trustAmt": 1180839699,
-      "close": 510.0,
+      "foreignRank": 69,
+      "trustRank": 25,
+      "foreignAmt": 251038260,
+      "trustAmt": 252319919,
+      "close": 523.0,
       "cashDiv": true,
       "cashDivAmt": 1.0,
       "divYear": 2025
     },
     {
-      "code": "5876",
-      "name": "上海商銀",
+      "code": "6414",
+      "name": "樺漢",
       "market": "TWSE",
-      "foreignRank": 83,
-      "trustRank": 36,
-      "foreignAmt": 188472893,
-      "trustAmt": 77998510,
-      "close": 44.7,
+      "foreignRank": 68,
+      "trustRank": 45,
+      "foreignAmt": 251323225,
+      "trustAmt": 41607230,
+      "close": 394.5,
       "cashDiv": true,
-      "cashDivAmt": 1.8,
+      "cashDivAmt": 14.0,
       "divYear": 2025
     },
     {
-      "code": "2912",
-      "name": "統一超",
+      "code": "5871",
+      "name": "中租-KY",
       "market": "TWSE",
-      "foreignRank": 86,
-      "trustRank": 67,
-      "foreignAmt": 179039440,
-      "trustAmt": 44902551,
-      "close": 242.0,
+      "foreignRank": 84,
+      "trustRank": 33,
+      "foreignAmt": 177073547,
+      "trustAmt": 90680292,
+      "close": 119.0,
       "cashDiv": true,
-      "cashDivAmt": 9.0,
+      "cashDivAmt": 5.8,
+      "divYear": 2025
+    },
+    {
+      "code": "6257",
+      "name": "矽格",
+      "market": "TWSE",
+      "foreignRank": 51,
+      "trustRank": 78,
+      "foreignAmt": 366581256,
+      "trustAmt": 4126761,
+      "close": 237.5,
+      "cashDiv": true,
+      "cashDivAmt": 4.2,
+      "divYear": 2025
+    },
+    {
+      "code": "3189",
+      "name": "景碩",
+      "market": "TWSE",
+      "foreignRank": 88,
+      "trustRank": 48,
+      "foreignAmt": 166794937,
+      "trustAmt": 28856766,
+      "close": 845.0,
+      "cashDiv": true,
+      "cashDivAmt": 1.75,
       "divYear": 2025
     }
   ],
@@ -91,30 +117,18 @@
       "count": 3
     },
     {
-      "code": "2892",
-      "name": "第一金",
+      "code": "3189",
+      "name": "景碩",
       "market": "TWSE",
       "days": [
-        "2026-07-07",
-        "2026-07-13"
+        "2026-07-09",
+        "2026-07-13",
+        "2026-07-15"
       ],
-      "lastClose": 33.65,
+      "lastClose": 845.0,
       "cashDiv": true,
-      "cashDivAmt": 1.3,
-      "count": 2
-    },
-    {
-      "code": "2890",
-      "name": "永豐金",
-      "market": "TWSE",
-      "days": [
-        "2026-07-07",
-        "2026-07-08"
-      ],
-      "lastClose": 41.9,
-      "cashDiv": true,
-      "cashDivAmt": 1.1,
-      "count": 2
+      "cashDivAmt": 1.75,
+      "count": 3
     },
     {
       "code": "2887",
@@ -182,19 +196,6 @@
       "count": 2
     },
     {
-      "code": "3189",
-      "name": "景碩",
-      "market": "TWSE",
-      "days": [
-        "2026-07-09",
-        "2026-07-13"
-      ],
-      "lastClose": 819.0,
-      "cashDiv": true,
-      "cashDivAmt": 1.75,
-      "count": 2
-    },
-    {
       "code": "5876",
       "name": "上海商銀",
       "market": "TWSE",
@@ -221,6 +222,19 @@
       "count": 2
     },
     {
+      "code": "6505",
+      "name": "台塑化",
+      "market": "TWSE",
+      "days": [
+        "2026-07-13",
+        "2026-07-15"
+      ],
+      "lastClose": 72.8,
+      "cashDiv": true,
+      "cashDivAmt": 1.2,
+      "count": 2
+    },
+    {
       "code": "5483",
       "name": "中美晶",
       "market": "TPEx",
@@ -234,41 +248,54 @@
       "count": 2
     },
     {
-      "code": "2458",
-      "name": "義隆",
+      "code": "3532",
+      "name": "台勝科",
       "market": "TWSE",
       "days": [
-        "2026-07-07"
+        "2026-07-14",
+        "2026-07-15"
       ],
-      "lastClose": 188.0,
+      "lastClose": 523.0,
       "cashDiv": true,
-      "cashDivAmt": 4.42,
+      "cashDivAmt": 1.0,
+      "count": 2
+    },
+    {
+      "code": "3026",
+      "name": "禾伸堂",
+      "market": "TWSE",
+      "days": [
+        "2026-07-08"
+      ],
+      "lastClose": 953.0,
+      "cashDiv": true,
+      "cashDivAmt": 5.8,
       "count": 1
     },
     {
-      "code": "3413",
-      "name": "京鼎",
+      "code": "2303",
+      "name": "聯電",
       "market": "TWSE",
       "days": [
-        "2026-07-07"
+        "2026-07-08"
       ],
-      "lastClose": 344.0,
+      "lastClose": 163.0,
       "cashDiv": true,
-      "cashDivAmt": 11.0,
+      "cashDivAmt": 2.6,
       "count": 1
     },
     {
-      "code": "2885",
-      "name": "元大金",
+      "code": "3034",
+      "name": "聯詠",
       "market": "TWSE",
       "days": [
-        "2026-07-07"
+        "2026-07-08"
       ],
-      "lastClose": 69.8,
+      "lastClose": 544.0,
       "cashDiv": true,
-      "cashDivAmt": 1.8,
+      "cashDivAmt": 23.0,
       "count": 1
     }
   ],
-  "totalRecords": 8
+  "totalRecords": 9
 }
