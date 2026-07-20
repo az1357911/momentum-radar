@@ -1,0 +1,15 @@
+[
+  {
+    "code": "2884",
+    "name": "玉山金",
+    "market": "TWSE",
+    "foreignRank": 14,
+    "trustRank": 96,
+    "foreignAmt": 859023427,
+    "trustAmt": 18780862,
+    "close": 35.85,
+    "cashDiv": false,
+    "cashDivAmt": null,
+    "divYear": null
+  }
+]
