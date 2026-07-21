@@ -1,0 +1,80 @@
+[
+  {
+    "code": "5871",
+    "name": "中租-KY",
+    "market": "TWSE",
+    "foreignRank": 44,
+    "trustRank": 23,
+    "foreignAmt": 312703515,
+    "trustAmt": 340703602,
+    "close": 123.5,
+    "cashDiv": true,
+    "cashDivAmt": 5.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2884",
+    "name": "玉山金",
+    "market": "TWSE",
+    "foreignRank": 16,
+    "trustRank": 53,
+    "foreignAmt": 810008165,
+    "trustAmt": 99553678,
+    "close": 36.95,
+    "cashDiv": true,
+    "cashDivAmt": 1.4,
+    "divYear": 2025
+  },
+  {
+    "code": "3706",
+    "name": "神達",
+    "market": "TWSE",
+    "foreignRank": 45,
+    "trustRank": 49,
+    "foreignAmt": 309565361,
+    "trustAmt": 126032215,
+    "close": 91.3,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2615",
+    "name": "萬海",
+    "market": "TWSE",
+    "foreignRank": 12,
+    "trustRank": 98,
+    "foreignAmt": 1172473700,
+    "trustAmt": 11095990,
+    "close": 85.2,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2377",
+    "name": "微星",
+    "market": "TWSE",
+    "foreignRank": 56,
+    "trustRank": 54,
+    "foreignAmt": 214453629,
+    "trustAmt": 98311613,
+    "close": 146.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2025
+  },
+  {
+    "code": "9939",
+    "name": "宏全",
+    "market": "TWSE",
+    "foreignRank": 76,
+    "trustRank": 80,
+    "foreignAmt": 139942152,
+    "trustAmt": 29089371,
+    "close": 132.5,
+    "cashDiv": true,
+    "cashDivAmt": 6.2,
+    "divYear": 2025
+  }
+]
