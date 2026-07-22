@@ -1,0 +1,54 @@
+[
+  {
+    "code": "2377",
+    "name": "微星",
+    "market": "TWSE",
+    "foreignRank": 10,
+    "trustRank": 52,
+    "foreignAmt": 1599506257,
+    "trustAmt": 106120300,
+    "close": 155.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2025
+  },
+  {
+    "code": "2027",
+    "name": "大成鋼",
+    "market": "TWSE",
+    "foreignRank": 22,
+    "trustRank": 42,
+    "foreignAmt": 1036724952,
+    "trustAmt": 178017059,
+    "close": 43.75,
+    "cashDiv": true,
+    "cashDivAmt": 1.5,
+    "divYear": 2025
+  },
+  {
+    "code": "2883",
+    "name": "凱基金",
+    "market": "TWSE",
+    "foreignRank": 21,
+    "trustRank": 70,
+    "foreignAmt": 1150699749,
+    "trustAmt": 43005985,
+    "close": 30.45,
+    "cashDiv": true,
+    "cashDivAmt": 1.0,
+    "divYear": 2025
+  },
+  {
+    "code": "1301",
+    "name": "台塑",
+    "market": "TWSE",
+    "foreignRank": 33,
+    "trustRank": 80,
+    "foreignAmt": 654805300,
+    "trustAmt": 21356358,
+    "close": 63.5,
+    "cashDiv": true,
+    "cashDivAmt": 0.5,
+    "divYear": 2025
+  }
+]
