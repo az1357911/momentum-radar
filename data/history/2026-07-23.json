@@ -1,0 +1,41 @@
+[
+  {
+    "code": "8046",
+    "name": "南電",
+    "market": "TWSE",
+    "foreignRank": 23,
+    "trustRank": 5,
+    "foreignAmt": 599713285,
+    "trustAmt": 830013128,
+    "close": 1230.0,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "3231",
+    "name": "緯創",
+    "market": "TWSE",
+    "foreignRank": 1,
+    "trustRank": 35,
+    "foreignAmt": 13772919512,
+    "trustAmt": 227920598,
+    "close": 173.5,
+    "cashDiv": true,
+    "cashDivAmt": 5.5,
+    "divYear": 2025
+  },
+  {
+    "code": "3706",
+    "name": "神達",
+    "market": "TWSE",
+    "foreignRank": 93,
+    "trustRank": 48,
+    "foreignAmt": 90720910,
+    "trustAmt": 128876664,
+    "close": 92.0,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  }
+]
