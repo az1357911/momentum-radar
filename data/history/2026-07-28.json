@@ -1,0 +1,67 @@
+[
+  {
+    "code": "2618",
+    "name": "長榮航",
+    "market": "TWSE",
+    "foreignRank": 5,
+    "trustRank": 57,
+    "foreignAmt": 1455520788,
+    "trustAmt": 30812939,
+    "close": 42.75,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "3045",
+    "name": "台灣大",
+    "market": "TWSE",
+    "foreignRank": 16,
+    "trustRank": 46,
+    "foreignAmt": 640431997,
+    "trustAmt": 54517915,
+    "close": 114.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2412",
+    "name": "中華電",
+    "market": "TWSE",
+    "foreignRank": 6,
+    "trustRank": 80,
+    "foreignAmt": 1360313858,
+    "trustAmt": 8942831,
+    "close": 141.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.2,
+    "divYear": 2025
+  },
+  {
+    "code": "4904",
+    "name": "遠傳",
+    "market": "TWSE",
+    "foreignRank": 27,
+    "trustRank": 69,
+    "foreignAmt": 432644425,
+    "trustAmt": 15279811,
+    "close": 106.0,
+    "cashDiv": true,
+    "cashDivAmt": 3.81,
+    "divYear": 2025
+  },
+  {
+    "code": "2884",
+    "name": "玉山金",
+    "market": "TWSE",
+    "foreignRank": 100,
+    "trustRank": 59,
+    "foreignAmt": 77945569,
+    "trustAmt": 26494596,
+    "close": 36.25,
+    "cashDiv": true,
+    "cashDivAmt": 1.4,
+    "divYear": 2025
+  }
+]
