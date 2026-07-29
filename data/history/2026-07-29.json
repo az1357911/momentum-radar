@@ -1,0 +1,54 @@
+[
+  {
+    "code": "2357",
+    "name": "華碩",
+    "market": "TWSE",
+    "foreignRank": 6,
+    "trustRank": 49,
+    "foreignAmt": 1187367060,
+    "trustAmt": 39459581,
+    "close": 761.0,
+    "cashDiv": true,
+    "cashDivAmt": 42.0,
+    "divYear": 2025
+  },
+  {
+    "code": "5880",
+    "name": "合庫金",
+    "market": "TWSE",
+    "foreignRank": 36,
+    "trustRank": 59,
+    "foreignAmt": 455797382,
+    "trustAmt": 21166698,
+    "close": 26.1,
+    "cashDiv": true,
+    "cashDivAmt": 0.8,
+    "divYear": 2025
+  },
+  {
+    "code": "3045",
+    "name": "台灣大",
+    "market": "TWSE",
+    "foreignRank": 43,
+    "trustRank": 60,
+    "foreignAmt": 434057986,
+    "trustAmt": 20629640,
+    "close": 113.5,
+    "cashDiv": true,
+    "cashDivAmt": 4.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2615",
+    "name": "萬海",
+    "market": "TWSE",
+    "foreignRank": 45,
+    "trustRank": 83,
+    "foreignAmt": 402196728,
+    "trustAmt": 8194002,
+    "close": 85.0,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  }
+]
