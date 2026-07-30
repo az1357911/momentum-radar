@@ -1,0 +1,93 @@
+[
+  {
+    "code": "2886",
+    "name": "兆豐金",
+    "market": "TWSE",
+    "foreignRank": 19,
+    "trustRank": 30,
+    "foreignAmt": 537011315,
+    "trustAmt": 178007238,
+    "close": 51.5,
+    "cashDiv": true,
+    "cashDivAmt": 1.75,
+    "divYear": 2025
+  },
+  {
+    "code": "5880",
+    "name": "合庫金",
+    "market": "TWSE",
+    "foreignRank": 6,
+    "trustRank": 61,
+    "foreignAmt": 1132386257,
+    "trustAmt": 18681129,
+    "close": 27.0,
+    "cashDiv": true,
+    "cashDivAmt": 0.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2412",
+    "name": "中華電",
+    "market": "TWSE",
+    "foreignRank": 8,
+    "trustRank": 76,
+    "foreignAmt": 1037413256,
+    "trustAmt": 10617132,
+    "close": 140.5,
+    "cashDiv": true,
+    "cashDivAmt": 5.2,
+    "divYear": 2025
+  },
+  {
+    "code": "2892",
+    "name": "第一金",
+    "market": "TWSE",
+    "foreignRank": 20,
+    "trustRank": 65,
+    "foreignAmt": 522236837,
+    "trustAmt": 17599092,
+    "close": 35.5,
+    "cashDiv": true,
+    "cashDivAmt": 1.3,
+    "divYear": 2025
+  },
+  {
+    "code": "2884",
+    "name": "玉山金",
+    "market": "TWSE",
+    "foreignRank": 7,
+    "trustRank": 81,
+    "foreignAmt": 1060664500,
+    "trustAmt": 9535772,
+    "close": 37.7,
+    "cashDiv": true,
+    "cashDivAmt": 1.4,
+    "divYear": 2025
+  },
+  {
+    "code": "3045",
+    "name": "台灣大",
+    "market": "TWSE",
+    "foreignRank": 14,
+    "trustRank": 85,
+    "foreignAmt": 619264489,
+    "trustAmt": 6312948,
+    "close": 114.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.8,
+    "divYear": 2025
+  },
+  {
+    "code": "2633",
+    "name": "台灣高鐵",
+    "market": "TWSE",
+    "foreignRank": 71,
+    "trustRank": 98,
+    "foreignAmt": 148089842,
+    "trustAmt": 1940030,
+    "close": 26.3,
+    "cashDiv": true,
+    "cashDivAmt": 1.15,
+    "divYear": 2025
+  }
+]
