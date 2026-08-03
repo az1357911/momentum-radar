@@ -1,0 +1,15 @@
+[
+  {
+    "code": "3231",
+    "name": "緯創",
+    "market": "TWSE",
+    "foreignRank": 7,
+    "trustRank": 6,
+    "foreignAmt": 2551359078,
+    "trustAmt": 1693706785,
+    "close": 186.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.5,
+    "divYear": 2025
+  }
+]
