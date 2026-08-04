@@ -1,0 +1,41 @@
+[
+  {
+    "code": "3231",
+    "name": "緯創",
+    "market": "TWSE",
+    "foreignRank": 5,
+    "trustRank": 11,
+    "foreignAmt": 3541085888,
+    "trustAmt": 1068863971,
+    "close": 195.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.5,
+    "divYear": 2025
+  },
+  {
+    "code": "2357",
+    "name": "華碩",
+    "market": "TWSE",
+    "foreignRank": 19,
+    "trustRank": 37,
+    "foreignAmt": 754178799,
+    "trustAmt": 222998347,
+    "close": 806.0,
+    "cashDiv": true,
+    "cashDivAmt": 42.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2885",
+    "name": "元大金",
+    "market": "TWSE",
+    "foreignRank": 44,
+    "trustRank": 26,
+    "foreignAmt": 366004790,
+    "trustAmt": 372378671,
+    "close": 69.0,
+    "cashDiv": true,
+    "cashDivAmt": 1.8,
+    "divYear": 2025
+  }
+]
