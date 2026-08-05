@@ -1,0 +1,54 @@
+[
+  {
+    "code": "3231",
+    "name": "緯創",
+    "market": "TWSE",
+    "foreignRank": 7,
+    "trustRank": 8,
+    "foreignAmt": 6995052237,
+    "trustAmt": 1144119085,
+    "close": 193.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.5,
+    "divYear": 2025
+  },
+  {
+    "code": "1590",
+    "name": "亞德客-KY",
+    "market": "TWSE",
+    "foreignRank": 85,
+    "trustRank": 30,
+    "foreignAmt": 197616143,
+    "trustAmt": 73001900,
+    "close": 1510.0,
+    "cashDiv": true,
+    "cashDivAmt": 28.59,
+    "divYear": 2025
+  },
+  {
+    "code": "2610",
+    "name": "華航",
+    "market": "TWSE",
+    "foreignRank": 62,
+    "trustRank": 55,
+    "foreignAmt": 314087682,
+    "trustAmt": 19358520,
+    "close": 22.6,
+    "cashDiv": true,
+    "cashDivAmt": 0.82,
+    "divYear": 2025
+  },
+  {
+    "code": "4938",
+    "name": "和碩",
+    "market": "TWSE",
+    "foreignRank": 41,
+    "trustRank": 77,
+    "foreignAmt": 496166074,
+    "trustAmt": 4017608,
+    "close": 89.5,
+    "cashDiv": true,
+    "cashDivAmt": 4.0,
+    "divYear": 2025
+  }
+]
