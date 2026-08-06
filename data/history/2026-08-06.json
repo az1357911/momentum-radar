@@ -1,0 +1,80 @@
+[
+  {
+    "code": "2377",
+    "name": "微星",
+    "market": "TWSE",
+    "foreignRank": 31,
+    "trustRank": 41,
+    "foreignAmt": 649034946,
+    "trustAmt": 62990995,
+    "close": 154.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2025
+  },
+  {
+    "code": "5351",
+    "name": "鈺創",
+    "market": "TPEx",
+    "foreignRank": 23,
+    "trustRank": 54,
+    "foreignAmt": 867387046,
+    "trustAmt": 42729890,
+    "close": 103.0,
+    "cashDiv": false,
+    "cashDivAmt": 0,
+    "divYear": 2020
+  },
+  {
+    "code": "3706",
+    "name": "神達",
+    "market": "TWSE",
+    "foreignRank": 27,
+    "trustRank": 51,
+    "foreignAmt": 698416088,
+    "trustAmt": 44359073,
+    "close": 92.9,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  },
+  {
+    "code": "8039",
+    "name": "台虹",
+    "market": "TWSE",
+    "foreignRank": 48,
+    "trustRank": 49,
+    "foreignAmt": 323387430,
+    "trustAmt": 46849304,
+    "close": 216.0,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2347",
+    "name": "聯強",
+    "market": "TWSE",
+    "foreignRank": 85,
+    "trustRank": 76,
+    "foreignAmt": 117084272,
+    "trustAmt": 15186052,
+    "close": 94.7,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2025
+  },
+  {
+    "code": "4763",
+    "name": "材料*-KY",
+    "market": "TWSE",
+    "foreignRank": 95,
+    "trustRank": 92,
+    "foreignAmt": 86219666,
+    "trustAmt": 4852036,
+    "close": 49.65,
+    "cashDiv": true,
+    "cashDivAmt": 3.05,
+    "divYear": 2025
+  }
+]
