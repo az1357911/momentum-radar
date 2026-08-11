@@ -1,158 +1,133 @@
 {
-  "generatedAt": "2026-08-10 19:03",
-  "refDate": "2026-08-10",
+  "generatedAt": "2026-08-11 18:45",
+  "refDate": "2026-08-11",
   "windowDates": [
-    "2026-08-04",
     "2026-08-05",
     "2026-08-06",
     "2026-08-07",
-    "2026-08-10"
+    "2026-08-10",
+    "2026-08-11"
   ],
   "today": [
+    {
+      "code": "2408",
+      "name": "南亞科",
+      "market": "TWSE",
+      "foreignRank": 2,
+      "trustRank": 18,
+      "foreignAmt": 7385284543,
+      "trustAmt": 152326968,
+      "close": 489.0,
+      "cashDiv": true,
+      "cashDivAmt": 1.5,
+      "divYear": 2025
+    },
+    {
+      "code": "1303",
+      "name": "南亞",
+      "market": "TWSE",
+      "foreignRank": 14,
+      "trustRank": 9,
+      "foreignAmt": 1365625681,
+      "trustAmt": 822106830,
+      "close": 190.0,
+      "cashDiv": true,
+      "cashDivAmt": 0.8,
+      "divYear": 2025
+    },
+    {
+      "code": "2357",
+      "name": "華碩",
+      "market": "TWSE",
+      "foreignRank": 17,
+      "trustRank": 30,
+      "foreignAmt": 1074347270,
+      "trustAmt": 77307837,
+      "close": 839.0,
+      "cashDiv": true,
+      "cashDivAmt": 42.0,
+      "divYear": 2025
+    },
     {
       "code": "2603",
       "name": "長榮",
       "market": "TWSE",
-      "foreignRank": 12,
-      "trustRank": 31,
-      "foreignAmt": 1917511383,
-      "trustAmt": 132059000,
-      "close": 214.0,
+      "foreignRank": 10,
+      "trustRank": 58,
+      "foreignAmt": 1589561801,
+      "trustAmt": 9937837,
+      "close": 218.0,
       "cashDiv": true,
       "cashDivAmt": 16.0,
       "divYear": 2025
     },
     {
-      "code": "6213",
-      "name": "聯茂",
+      "code": "2379",
+      "name": "瑞昱",
       "market": "TWSE",
-      "foreignRank": 11,
-      "trustRank": 35,
-      "foreignAmt": 1920624572,
-      "trustAmt": 89639923,
-      "close": 427.5,
+      "foreignRank": 57,
+      "trustRank": 44,
+      "foreignAmt": 242242098,
+      "trustAmt": 24655482,
+      "close": 772.0,
       "cashDiv": true,
-      "cashDivAmt": 3.0,
+      "cashDivAmt": 25.0,
       "divYear": 2025
     },
     {
-      "code": "2408",
-      "name": "南亞科",
+      "code": "2609",
+      "name": "陽明",
       "market": "TWSE",
-      "foreignRank": 1,
-      "trustRank": 54,
-      "foreignAmt": 15081651949,
-      "trustAmt": 24049719,
-      "close": 502.0,
+      "foreignRank": 45,
+      "trustRank": 79,
+      "foreignAmt": 355266041,
+      "trustAmt": 2123034,
+      "close": 52.0,
       "cashDiv": true,
-      "cashDivAmt": 1.5,
+      "cashDivAmt": 2.0,
       "divYear": 2025
     },
     {
-      "code": "6446",
-      "name": "藥華藥",
+      "code": "2890",
+      "name": "永豐金",
       "market": "TWSE",
-      "foreignRank": 19,
-      "trustRank": 36,
-      "foreignAmt": 1126347439,
-      "trustAmt": 88613356,
-      "close": 1330.0,
-      "cashDiv": false,
-      "cashDivAmt": 0,
-      "divYear": 2019
-    },
-    {
-      "code": "0056",
-      "name": "元大高股息",
-      "market": "TWSE",
-      "foreignRank": 16,
-      "trustRank": 46,
-      "foreignAmt": 1407328323,
-      "trustAmt": 43856564,
-      "close": 52.45,
-      "cashDiv": false,
-      "cashDivAmt": null,
-      "divYear": null
-    },
-    {
-      "code": "2330",
-      "name": "台積電",
-      "market": "TWSE",
-      "foreignRank": 63,
-      "trustRank": 17,
-      "foreignAmt": 284663180,
-      "trustAmt": 316395466,
-      "close": 2380.0,
+      "foreignRank": 77,
+      "trustRank": 95,
+      "foreignAmt": 123387082,
+      "trustAmt": 376722,
+      "close": 39.05,
       "cashDiv": true,
-      "cashDivAmt": 7.0,
-      "divYear": 2026
-    },
-    {
-      "code": "2887",
-      "name": "台新新光金",
-      "market": "TWSE",
-      "foreignRank": 72,
-      "trustRank": 29,
-      "foreignAmt": 237413027,
-      "trustAmt": 142534946,
-      "close": 35.9,
-      "cashDiv": true,
-      "cashDivAmt": 1.0,
+      "cashDivAmt": 1.1,
       "divYear": 2025
     },
     {
-      "code": "3034",
-      "name": "聯詠",
+      "code": "6409",
+      "name": "旭隼",
       "market": "TWSE",
-      "foreignRank": 53,
-      "trustRank": 78,
-      "foreignAmt": 348399812,
-      "trustAmt": 6803243,
-      "close": 544.0,
+      "foreignRank": 84,
+      "trustRank": 92,
+      "foreignAmt": 101692180,
+      "trustAmt": 693742,
+      "close": 1010.0,
       "cashDiv": true,
-      "cashDivAmt": 23.0,
-      "divYear": 2025
-    },
-    {
-      "code": "3702",
-      "name": "大聯大",
-      "market": "TWSE",
-      "foreignRank": 98,
-      "trustRank": 45,
-      "foreignAmt": 151492970,
-      "trustAmt": 46087547,
-      "close": 130.0,
-      "cashDiv": true,
-      "cashDivAmt": 3.8,
-      "divYear": 2025
-    },
-    {
-      "code": "2027",
-      "name": "大成鋼",
-      "market": "TWSE",
-      "foreignRank": 89,
-      "trustRank": 56,
-      "foreignAmt": 178527791,
-      "trustAmt": 21555657,
-      "close": 47.3,
-      "cashDiv": true,
-      "cashDivAmt": 1.5,
+      "cashDivAmt": 37.0,
       "divYear": 2025
     }
   ],
   "streak": [
     {
-      "code": "3231",
-      "name": "緯創",
+      "code": "2603",
+      "name": "長榮",
       "market": "TWSE",
       "days": [
-        "2026-08-04",
-        "2026-08-05"
+        "2026-08-07",
+        "2026-08-10",
+        "2026-08-11"
       ],
-      "lastClose": 193.0,
+      "lastClose": 218.0,
       "cashDiv": true,
-      "cashDivAmt": 5.5,
-      "count": 2
+      "cashDivAmt": 16.0,
+      "count": 3
     },
     {
       "code": "1590",
@@ -207,16 +182,16 @@
       "count": 2
     },
     {
-      "code": "2603",
-      "name": "長榮",
+      "code": "2379",
+      "name": "瑞昱",
       "market": "TWSE",
       "days": [
         "2026-08-07",
-        "2026-08-10"
+        "2026-08-11"
       ],
-      "lastClose": 214.0,
+      "lastClose": 772.0,
       "cashDiv": true,
-      "cashDivAmt": 16.0,
+      "cashDivAmt": 25.0,
       "count": 2
     },
     {
@@ -233,27 +208,28 @@
       "count": 2
     },
     {
-      "code": "2357",
-      "name": "華碩",
+      "code": "2408",
+      "name": "南亞科",
       "market": "TWSE",
       "days": [
-        "2026-08-04"
+        "2026-08-10",
+        "2026-08-11"
       ],
-      "lastClose": 806.0,
+      "lastClose": 489.0,
       "cashDiv": true,
-      "cashDivAmt": 42.0,
-      "count": 1
+      "cashDivAmt": 1.5,
+      "count": 2
     },
     {
-      "code": "2885",
-      "name": "元大金",
+      "code": "3231",
+      "name": "緯創",
       "market": "TWSE",
       "days": [
-        "2026-08-04"
+        "2026-08-05"
       ],
-      "lastClose": 69.0,
+      "lastClose": 193.0,
       "cashDiv": true,
-      "cashDivAmt": 1.8,
+      "cashDivAmt": 5.5,
       "count": 1
     },
     {
@@ -329,5 +305,5 @@
       "count": 1
     }
   ],
-  "totalRecords": 27
+  "totalRecords": 28
 }
