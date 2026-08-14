@@ -1,0 +1,80 @@
+[
+  {
+    "code": "3017",
+    "name": "奇鋐",
+    "market": "TWSE",
+    "foreignRank": 6,
+    "trustRank": 3,
+    "foreignAmt": 3596955525,
+    "trustAmt": 2548236718,
+    "close": 3235.0,
+    "cashDiv": true,
+    "cashDivAmt": 21.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2887",
+    "name": "台新新光金",
+    "market": "TWSE",
+    "foreignRank": 36,
+    "trustRank": 6,
+    "foreignAmt": 660522883,
+    "trustAmt": 936565885,
+    "close": 37.75,
+    "cashDiv": true,
+    "cashDivAmt": 1.0,
+    "divYear": 2025
+  },
+  {
+    "code": "6446",
+    "name": "藥華藥",
+    "market": "TWSE",
+    "foreignRank": 35,
+    "trustRank": 52,
+    "foreignAmt": 667330336,
+    "trustAmt": 18384326,
+    "close": 1500.0,
+    "cashDiv": false,
+    "cashDivAmt": 0,
+    "divYear": 2019
+  },
+  {
+    "code": "6669",
+    "name": "緯穎",
+    "market": "TWSE",
+    "foreignRank": 89,
+    "trustRank": 2,
+    "foreignAmt": 149468105,
+    "trustAmt": 2907536223,
+    "close": 6435.0,
+    "cashDiv": true,
+    "cashDivAmt": 144.39,
+    "divYear": 2025
+  },
+  {
+    "code": "2603",
+    "name": "長榮",
+    "market": "TWSE",
+    "foreignRank": 19,
+    "trustRank": 79,
+    "foreignAmt": 1717457851,
+    "trustAmt": 1690223,
+    "close": 219.0,
+    "cashDiv": true,
+    "cashDivAmt": 16.0,
+    "divYear": 2025
+  },
+  {
+    "code": "3706",
+    "name": "神達",
+    "market": "TWSE",
+    "foreignRank": 28,
+    "trustRank": 99,
+    "foreignAmt": 901377171,
+    "trustAmt": 93018,
+    "close": 92.7,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  }
+]
