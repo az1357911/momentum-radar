@@ -1,0 +1,80 @@
+[
+  {
+    "code": "3008",
+    "name": "大立光",
+    "market": "TWSE",
+    "foreignRank": 7,
+    "trustRank": 23,
+    "foreignAmt": 3271217604,
+    "trustAmt": 230670430,
+    "close": 5070.0,
+    "cashDiv": true,
+    "cashDivAmt": 52.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2603",
+    "name": "長榮",
+    "market": "TWSE",
+    "foreignRank": 5,
+    "trustRank": 42,
+    "foreignAmt": 5630417618,
+    "trustAmt": 27938838,
+    "close": 231.5,
+    "cashDiv": true,
+    "cashDivAmt": 16.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2609",
+    "name": "陽明",
+    "market": "TWSE",
+    "foreignRank": 15,
+    "trustRank": 65,
+    "foreignAmt": 1279423055,
+    "trustAmt": 15601327,
+    "close": 54.7,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2542",
+    "name": "興富發",
+    "market": "TWSE",
+    "foreignRank": 71,
+    "trustRank": 26,
+    "foreignAmt": 192507331,
+    "trustAmt": 112967104,
+    "close": 46.8,
+    "cashDiv": true,
+    "cashDivAmt": 4.0,
+    "divYear": 2025
+  },
+  {
+    "code": "1402",
+    "name": "遠東新",
+    "market": "TWSE",
+    "foreignRank": 82,
+    "trustRank": 68,
+    "foreignAmt": 170143553,
+    "trustAmt": 15130784,
+    "close": 27.55,
+    "cashDiv": true,
+    "cashDivAmt": 1.25,
+    "divYear": 2025
+  },
+  {
+    "code": "2606",
+    "name": "裕民",
+    "market": "TWSE",
+    "foreignRank": 85,
+    "trustRank": 91,
+    "foreignAmt": 159694648,
+    "trustAmt": 3796536,
+    "close": 68.3,
+    "cashDiv": true,
+    "cashDivAmt": 2.8,
+    "divYear": 2025
+  }
+]
