@@ -1,0 +1,80 @@
+[
+  {
+    "code": "2408",
+    "name": "南亞科",
+    "market": "TWSE",
+    "foreignRank": 1,
+    "trustRank": 15,
+    "foreignAmt": 12749025061,
+    "trustAmt": 392499930,
+    "close": 517.0,
+    "cashDiv": true,
+    "cashDivAmt": 1.5,
+    "divYear": 2025
+  },
+  {
+    "code": "2603",
+    "name": "長榮",
+    "market": "TWSE",
+    "foreignRank": 2,
+    "trustRank": 39,
+    "foreignAmt": 3880068484,
+    "trustAmt": 173399863,
+    "close": 246.0,
+    "cashDiv": true,
+    "cashDivAmt": 16.0,
+    "divYear": 2025
+  },
+  {
+    "code": "6472",
+    "name": "保瑞",
+    "market": "TWSE",
+    "foreignRank": 45,
+    "trustRank": 35,
+    "foreignAmt": 236465603,
+    "trustAmt": 190216605,
+    "close": 445.5,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2018
+  },
+  {
+    "code": "6213",
+    "name": "聯茂",
+    "market": "TWSE",
+    "foreignRank": 33,
+    "trustRank": 71,
+    "foreignAmt": 393101142,
+    "trustAmt": 40092645,
+    "close": 510.0,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2027",
+    "name": "大成鋼",
+    "market": "TWSE",
+    "foreignRank": 72,
+    "trustRank": 90,
+    "foreignAmt": 126882565,
+    "trustAmt": 15272305,
+    "close": 50.5,
+    "cashDiv": true,
+    "cashDivAmt": 1.5,
+    "divYear": 2025
+  },
+  {
+    "code": "2606",
+    "name": "裕民",
+    "market": "TWSE",
+    "foreignRank": 90,
+    "trustRank": 76,
+    "foreignAmt": 75647569,
+    "trustAmt": 35720530,
+    "close": 70.2,
+    "cashDiv": true,
+    "cashDivAmt": 2.8,
+    "divYear": 2025
+  }
+]

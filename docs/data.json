@@ -1,146 +1,119 @@
 {
-  "generatedAt": "2026-08-19 18:23",
-  "refDate": "2026-08-19",
+  "generatedAt": "2026-08-20 18:33",
+  "refDate": "2026-08-20",
   "windowDates": [
-    "2026-08-13",
     "2026-08-14",
     "2026-08-17",
     "2026-08-18",
-    "2026-08-19"
+    "2026-08-19",
+    "2026-08-20"
   ],
   "today": [
     {
-      "code": "6214",
-      "name": "精誠",
+      "code": "2408",
+      "name": "南亞科",
       "market": "TWSE",
-      "foreignRank": 25,
-      "trustRank": 20,
-      "foreignAmt": 457930690,
-      "trustAmt": 235617107,
-      "close": 178.5,
+      "foreignRank": 1,
+      "trustRank": 15,
+      "foreignAmt": 12749025061,
+      "trustAmt": 392499930,
+      "close": 517.0,
       "cashDiv": true,
-      "cashDivAmt": 6.0,
+      "cashDivAmt": 1.5,
       "divYear": 2025
     },
     {
-      "code": "3653",
-      "name": "健策",
+      "code": "2603",
+      "name": "長榮",
       "market": "TWSE",
-      "foreignRank": 67,
-      "trustRank": 2,
-      "foreignAmt": 133139809,
-      "trustAmt": 1458697731,
-      "close": 5460.0,
+      "foreignRank": 2,
+      "trustRank": 39,
+      "foreignAmt": 3880068484,
+      "trustAmt": 173399863,
+      "close": 246.0,
       "cashDiv": true,
-      "cashDivAmt": 22.0,
+      "cashDivAmt": 16.0,
       "divYear": 2025
+    },
+    {
+      "code": "6472",
+      "name": "保瑞",
+      "market": "TWSE",
+      "foreignRank": 45,
+      "trustRank": 35,
+      "foreignAmt": 236465603,
+      "trustAmt": 190216605,
+      "close": 445.5,
+      "cashDiv": true,
+      "cashDivAmt": 3.0,
+      "divYear": 2018
     },
     {
       "code": "6213",
       "name": "聯茂",
       "market": "TWSE",
-      "foreignRank": 34,
-      "trustRank": 38,
-      "foreignAmt": 358954767,
-      "trustAmt": 57965270,
-      "close": 484.0,
+      "foreignRank": 33,
+      "trustRank": 71,
+      "foreignAmt": 393101142,
+      "trustAmt": 40092645,
+      "close": 510.0,
       "cashDiv": true,
       "cashDivAmt": 3.0,
       "divYear": 2025
     },
     {
-      "code": "1402",
-      "name": "遠東新",
+      "code": "2027",
+      "name": "大成鋼",
       "market": "TWSE",
-      "foreignRank": 53,
-      "trustRank": 54,
-      "foreignAmt": 169927085,
-      "trustAmt": 25059878,
-      "close": 28.0,
+      "foreignRank": 72,
+      "trustRank": 90,
+      "foreignAmt": 126882565,
+      "trustAmt": 15272305,
+      "close": 50.5,
       "cashDiv": true,
-      "cashDivAmt": 1.25,
+      "cashDivAmt": 1.5,
       "divYear": 2025
     },
     {
-      "code": "2542",
-      "name": "興富發",
+      "code": "2606",
+      "name": "裕民",
       "market": "TWSE",
-      "foreignRank": 37,
-      "trustRank": 77,
-      "foreignAmt": 319160662,
-      "trustAmt": 10165851,
-      "close": 48.15,
+      "foreignRank": 90,
+      "trustRank": 76,
+      "foreignAmt": 75647569,
+      "trustAmt": 35720530,
+      "close": 70.2,
       "cashDiv": true,
-      "cashDivAmt": 4.0,
-      "divYear": 2025
-    },
-    {
-      "code": "2637",
-      "name": "慧洋-KY",
-      "market": "TWSE",
-      "foreignRank": 59,
-      "trustRank": 61,
-      "foreignAmt": 158137227,
-      "trustAmt": 17942815,
-      "close": 91.8,
-      "cashDiv": true,
-      "cashDivAmt": 3.5,
+      "cashDivAmt": 2.8,
       "divYear": 2025
     }
   ],
   "streak": [
     {
+      "code": "2603",
+      "name": "長榮",
+      "market": "TWSE",
+      "days": [
+        "2026-08-14",
+        "2026-08-17",
+        "2026-08-20"
+      ],
+      "lastClose": 246.0,
+      "cashDiv": true,
+      "cashDivAmt": 16.0,
+      "count": 3
+    },
+    {
       "code": "2542",
       "name": "興富發",
       "market": "TWSE",
       "days": [
-        "2026-08-13",
         "2026-08-17",
         "2026-08-19"
       ],
       "lastClose": 48.15,
       "cashDiv": true,
       "cashDivAmt": 4.0,
-      "count": 3
-    },
-    {
-      "code": "2603",
-      "name": "長榮",
-      "market": "TWSE",
-      "days": [
-        "2026-08-13",
-        "2026-08-14",
-        "2026-08-17"
-      ],
-      "lastClose": 231.5,
-      "cashDiv": true,
-      "cashDivAmt": 16.0,
-      "count": 3
-    },
-    {
-      "code": "3017",
-      "name": "奇鋐",
-      "market": "TWSE",
-      "days": [
-        "2026-08-13",
-        "2026-08-14"
-      ],
-      "lastClose": 3235.0,
-      "cashDiv": true,
-      "cashDivAmt": 21.0,
-      "count": 2
-    },
-    {
-      "code": "2887",
-      "name": "台新新光金",
-      "market": "TWSE",
-      "days": [
-        "2026-08-13",
-        "2026-08-14"
-      ],
-      "lastClose": 37.75,
-      "cashDiv": true,
-      "cashDivAmt": 1.0,
       "count": 2
     },
     {
@@ -157,87 +130,53 @@
       "count": 2
     },
     {
-      "code": "2408",
-      "name": "南亞科",
+      "code": "2606",
+      "name": "裕民",
       "market": "TWSE",
       "days": [
-        "2026-08-13"
+        "2026-08-17",
+        "2026-08-20"
       ],
-      "lastClose": 514.0,
+      "lastClose": 70.2,
       "cashDiv": true,
-      "cashDivAmt": 1.5,
-      "count": 1
+      "cashDivAmt": 2.8,
+      "count": 2
     },
     {
-      "code": "3231",
-      "name": "緯創",
+      "code": "6213",
+      "name": "聯茂",
       "market": "TWSE",
       "days": [
-        "2026-08-13"
+        "2026-08-19",
+        "2026-08-20"
       ],
-      "lastClose": 197.0,
-      "cashDiv": true,
-      "cashDivAmt": 5.5,
-      "count": 1
-    },
-    {
-      "code": "2301",
-      "name": "光寶科",
-      "market": "TWSE",
-      "days": [
-        "2026-08-13"
-      ],
-      "lastClose": 269.5,
+      "lastClose": 510.0,
       "cashDiv": true,
       "cashDivAmt": 3.0,
-      "count": 1
+      "count": 2
     },
     {
-      "code": "2377",
-      "name": "微星",
+      "code": "3017",
+      "name": "奇鋐",
       "market": "TWSE",
       "days": [
-        "2026-08-13"
+        "2026-08-14"
       ],
-      "lastClose": 168.0,
+      "lastClose": 3235.0,
       "cashDiv": true,
-      "cashDivAmt": 4.2,
+      "cashDivAmt": 21.0,
       "count": 1
     },
     {
-      "code": "2376",
-      "name": "技嘉",
+      "code": "2887",
+      "name": "台新新光金",
       "market": "TWSE",
       "days": [
-        "2026-08-13"
+        "2026-08-14"
       ],
-      "lastClose": 393.5,
-      "cashDiv": true,
-      "cashDivAmt": 12.0,
-      "count": 1
-    },
-    {
-      "code": "2883",
-      "name": "凱基金",
-      "market": "TWSE",
-      "days": [
-        "2026-08-13"
-      ],
-      "lastClose": 31.5,
+      "lastClose": 37.75,
       "cashDiv": true,
       "cashDivAmt": 1.0,
-      "count": 1
-    },
-    {
-      "code": "2885",
-      "name": "元大金",
-      "market": "TWSE",
-      "days": [
-        "2026-08-13"
-      ],
-      "lastClose": 69.7,
-      "cashDiv": true,
-      "cashDivAmt": 1.8,
       "count": 1
     },
     {
@@ -275,7 +214,67 @@
       "cashDiv": true,
       "cashDivAmt": 3.0,
       "count": 1
+    },
+    {
+      "code": "3008",
+      "name": "大立光",
+      "market": "TWSE",
+      "days": [
+        "2026-08-17"
+      ],
+      "lastClose": 5070.0,
+      "cashDiv": true,
+      "cashDivAmt": 52.0,
+      "count": 1
+    },
+    {
+      "code": "2609",
+      "name": "陽明",
+      "market": "TWSE",
+      "days": [
+        "2026-08-17"
+      ],
+      "lastClose": 54.7,
+      "cashDiv": true,
+      "cashDivAmt": 2.0,
+      "count": 1
+    },
+    {
+      "code": "6214",
+      "name": "精誠",
+      "market": "TWSE",
+      "days": [
+        "2026-08-19"
+      ],
+      "lastClose": 178.5,
+      "cashDiv": true,
+      "cashDivAmt": 6.0,
+      "count": 1
+    },
+    {
+      "code": "3653",
+      "name": "健策",
+      "market": "TWSE",
+      "days": [
+        "2026-08-19"
+      ],
+      "lastClose": 5460.0,
+      "cashDiv": true,
+      "cashDivAmt": 22.0,
+      "count": 1
+    },
+    {
+      "code": "2637",
+      "name": "慧洋-KY",
+      "market": "TWSE",
+      "days": [
+        "2026-08-19"
+      ],
+      "lastClose": 91.8,
+      "cashDiv": true,
+      "cashDivAmt": 3.5,
+      "count": 1
     }
   ],
-  "totalRecords": 34
+  "totalRecords": 35
 }
