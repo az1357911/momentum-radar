@@ -1,0 +1,67 @@
+[
+  {
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEx",
+    "foreignRank": 1,
+    "trustRank": 6,
+    "foreignAmt": 3925770734,
+    "trustAmt": 403134390,
+    "close": 200.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2019
+  },
+  {
+    "code": "3105",
+    "name": "穩懋",
+    "market": "TPEx",
+    "foreignRank": 6,
+    "trustRank": 2,
+    "foreignAmt": 1472897437,
+    "trustAmt": 866980920,
+    "close": 454.0,
+    "cashDiv": true,
+    "cashDivAmt": 10.0,
+    "divYear": 2020
+  },
+  {
+    "code": "2891",
+    "name": "中信金",
+    "market": "TWSE",
+    "foreignRank": 7,
+    "trustRank": 16,
+    "foreignAmt": 954998875,
+    "trustAmt": 207558730,
+    "close": 69.7,
+    "cashDiv": true,
+    "cashDivAmt": 2.5,
+    "divYear": 2025
+  },
+  {
+    "code": "6214",
+    "name": "精誠",
+    "market": "TWSE",
+    "foreignRank": 25,
+    "trustRank": 73,
+    "foreignAmt": 194555149,
+    "trustAmt": 8465940,
+    "close": 190.0,
+    "cashDiv": true,
+    "cashDivAmt": 6.0,
+    "divYear": 2025
+  },
+  {
+    "code": "5876",
+    "name": "上海商銀",
+    "market": "TWSE",
+    "foreignRank": 57,
+    "trustRank": 52,
+    "foreignAmt": 60747480,
+    "trustAmt": 32158644,
+    "close": 49.8,
+    "cashDiv": true,
+    "cashDivAmt": 1.8,
+    "divYear": 2025
+  }
+]
