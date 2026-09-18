@@ -1,0 +1,80 @@
+[
+  {
+    "code": "6147",
+    "name": "頎邦",
+    "market": "TPEx",
+    "foreignRank": 20,
+    "trustRank": 14,
+    "foreignAmt": 1525300851,
+    "trustAmt": 573072300,
+    "close": 229.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.2,
+    "divYear": 2019
+  },
+  {
+    "code": "3105",
+    "name": "穩懋",
+    "market": "TPEx",
+    "foreignRank": 11,
+    "trustRank": 41,
+    "foreignAmt": 4325762065,
+    "trustAmt": 114921044,
+    "close": 500.0,
+    "cashDiv": true,
+    "cashDivAmt": 10.0,
+    "divYear": 2020
+  },
+  {
+    "code": "3034",
+    "name": "聯詠",
+    "market": "TWSE",
+    "foreignRank": 32,
+    "trustRank": 40,
+    "foreignAmt": 1021379329,
+    "trustAmt": 119466625,
+    "close": 558.0,
+    "cashDiv": true,
+    "cashDivAmt": 23.0,
+    "divYear": 2025
+  },
+  {
+    "code": "3026",
+    "name": "禾伸堂",
+    "market": "TWSE",
+    "foreignRank": 51,
+    "trustRank": 27,
+    "foreignAmt": 524189917,
+    "trustAmt": 212006775,
+    "close": 797.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.8,
+    "divYear": 2025
+  },
+  {
+    "code": "3491",
+    "name": "昇達科",
+    "market": "TPEx",
+    "foreignRank": 67,
+    "trustRank": 26,
+    "foreignAmt": 356932455,
+    "trustAmt": 235250213,
+    "close": 1565.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.0,
+    "divYear": 2019
+  },
+  {
+    "code": "00935",
+    "name": "野村臺灣新科技50",
+    "market": "TWSE",
+    "foreignRank": 69,
+    "trustRank": 78,
+    "foreignAmt": 340591355,
+    "trustAmt": 22548406,
+    "close": 58.55,
+    "cashDiv": false,
+    "cashDivAmt": null,
+    "divYear": null
+  }
+]
