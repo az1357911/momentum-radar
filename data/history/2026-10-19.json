@@ -1,0 +1,67 @@
+[
+  {
+    "code": "2412",
+    "name": "中華電",
+    "market": "TWSE",
+    "foreignRank": 19,
+    "trustRank": 27,
+    "foreignAmt": 516251282,
+    "trustAmt": 373166631,
+    "close": 154.5,
+    "cashDiv": true,
+    "cashDivAmt": 5.2,
+    "divYear": 2025
+  },
+  {
+    "code": "1815",
+    "name": "富喬",
+    "market": "TPEx",
+    "foreignRank": 1,
+    "trustRank": 63,
+    "foreignAmt": 3004316432,
+    "trustAmt": 72601830,
+    "close": 154.0,
+    "cashDiv": true,
+    "cashDivAmt": 0.5,
+    "divYear": 2018
+  },
+  {
+    "code": "8039",
+    "name": "台虹",
+    "market": "TWSE",
+    "foreignRank": 9,
+    "trustRank": 80,
+    "foreignAmt": 962578327,
+    "trustAmt": 28696211,
+    "close": 299.0,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2886",
+    "name": "兆豐金",
+    "market": "TWSE",
+    "foreignRank": 89,
+    "trustRank": 53,
+    "foreignAmt": 63143485,
+    "trustAmt": 123082421,
+    "close": 53.9,
+    "cashDiv": true,
+    "cashDivAmt": 1.75,
+    "divYear": 2025
+  },
+  {
+    "code": "2027",
+    "name": "大成鋼",
+    "market": "TWSE",
+    "foreignRank": 72,
+    "trustRank": 71,
+    "foreignAmt": 96276134,
+    "trustAmt": 46356068,
+    "close": 51.0,
+    "cashDiv": true,
+    "cashDivAmt": 1.5,
+    "divYear": 2025
+  }
+]
