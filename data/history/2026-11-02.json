@@ -1,0 +1,67 @@
+[
+  {
+    "code": "2603",
+    "name": "長榮",
+    "market": "TWSE",
+    "foreignRank": 46,
+    "trustRank": 19,
+    "foreignAmt": 94125303,
+    "trustAmt": 423424562,
+    "close": 274.5,
+    "cashDiv": true,
+    "cashDivAmt": 16.0,
+    "divYear": 2025
+  },
+  {
+    "code": "1216",
+    "name": "統一",
+    "market": "TWSE",
+    "foreignRank": 24,
+    "trustRank": 58,
+    "foreignAmt": 209394211,
+    "trustAmt": 81331147,
+    "close": 80.6,
+    "cashDiv": true,
+    "cashDivAmt": 3.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2618",
+    "name": "長榮航",
+    "market": "TWSE",
+    "foreignRank": 23,
+    "trustRank": 68,
+    "foreignAmt": 224239649,
+    "trustAmt": 68761873,
+    "close": 43.15,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2801",
+    "name": "彰銀",
+    "market": "TWSE",
+    "foreignRank": 72,
+    "trustRank": 50,
+    "foreignAmt": 52433767,
+    "trustAmt": 125459379,
+    "close": 30.85,
+    "cashDiv": true,
+    "cashDivAmt": 0.8,
+    "divYear": 2025
+  },
+  {
+    "code": "5880",
+    "name": "合庫金",
+    "market": "TWSE",
+    "foreignRank": 34,
+    "trustRank": 93,
+    "foreignAmt": 130050133,
+    "trustAmt": 35173364,
+    "close": 29.05,
+    "cashDiv": true,
+    "cashDivAmt": 0.8,
+    "divYear": 2025
+  }
+]
