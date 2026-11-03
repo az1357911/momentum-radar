@@ -1,0 +1,28 @@
+[
+  {
+    "code": "1802",
+    "name": "台玻",
+    "market": "TWSE",
+    "foreignRank": 1,
+    "trustRank": 5,
+    "foreignAmt": 3729952107,
+    "trustAmt": 1182557674,
+    "close": 67.7,
+    "cashDiv": false,
+    "cashDivAmt": 0,
+    "divYear": 2025
+  },
+  {
+    "code": "2618",
+    "name": "長榮航",
+    "market": "TWSE",
+    "foreignRank": 9,
+    "trustRank": 52,
+    "foreignAmt": 688390804,
+    "trustAmt": 65415793,
+    "close": 43.7,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  }
+]
