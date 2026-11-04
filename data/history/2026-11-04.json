@@ -1,0 +1,41 @@
+[
+  {
+    "code": "2412",
+    "name": "中華電",
+    "market": "TWSE",
+    "foreignRank": 10,
+    "trustRank": 23,
+    "foreignAmt": 654177487,
+    "trustAmt": 313150477,
+    "close": 161.5,
+    "cashDiv": true,
+    "cashDivAmt": 5.2,
+    "divYear": 2025
+  },
+  {
+    "code": "3045",
+    "name": "台灣大",
+    "market": "TWSE",
+    "foreignRank": 22,
+    "trustRank": 34,
+    "foreignAmt": 327943847,
+    "trustAmt": 184405733,
+    "close": 135.0,
+    "cashDiv": true,
+    "cashDivAmt": 4.8,
+    "divYear": 2025
+  },
+  {
+    "code": "4904",
+    "name": "遠傳",
+    "market": "TWSE",
+    "foreignRank": 33,
+    "trustRank": 41,
+    "foreignAmt": 188654256,
+    "trustAmt": 139927359,
+    "close": 114.0,
+    "cashDiv": true,
+    "cashDivAmt": 3.81,
+    "divYear": 2025
+  }
+]

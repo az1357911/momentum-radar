@@ -1,38 +1,51 @@
 {
-  "generatedAt": "2026-11-04 01:28",
-  "refDate": "2026-11-03",
+  "generatedAt": "2026-11-05 01:42",
+  "refDate": "2026-11-04",
   "windowDates": [
-    "2026-10-28",
     "2026-10-29",
     "2026-10-30",
     "2026-11-02",
-    "2026-11-03"
+    "2026-11-03",
+    "2026-11-04"
   ],
   "today": [
     {
-      "code": "1802",
-      "name": "台玻",
+      "code": "2412",
+      "name": "中華電",
       "market": "TWSE",
-      "foreignRank": 1,
-      "trustRank": 5,
-      "foreignAmt": 3729952107,
-      "trustAmt": 1182557674,
-      "close": 67.7,
-      "cashDiv": false,
-      "cashDivAmt": 0,
+      "foreignRank": 10,
+      "trustRank": 23,
+      "foreignAmt": 654177487,
+      "trustAmt": 313150477,
+      "close": 161.5,
+      "cashDiv": true,
+      "cashDivAmt": 5.2,
       "divYear": 2025
     },
     {
-      "code": "2618",
-      "name": "長榮航",
+      "code": "3045",
+      "name": "台灣大",
       "market": "TWSE",
-      "foreignRank": 9,
-      "trustRank": 52,
-      "foreignAmt": 688390804,
-      "trustAmt": 65415793,
-      "close": 43.7,
+      "foreignRank": 22,
+      "trustRank": 34,
+      "foreignAmt": 327943847,
+      "trustAmt": 184405733,
+      "close": 135.0,
       "cashDiv": true,
-      "cashDivAmt": 2.0,
+      "cashDivAmt": 4.8,
+      "divYear": 2025
+    },
+    {
+      "code": "4904",
+      "name": "遠傳",
+      "market": "TWSE",
+      "foreignRank": 33,
+      "trustRank": 41,
+      "foreignAmt": 188654256,
+      "trustAmt": 139927359,
+      "close": 114.0,
+      "cashDiv": true,
+      "cashDivAmt": 3.81,
       "divYear": 2025
     }
   ],
@@ -80,29 +93,42 @@
       "count": 3
     },
     {
-      "code": "2885",
-      "name": "元大金",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28",
-        "2026-10-29"
-      ],
-      "lastClose": 73.4,
-      "cashDiv": true,
-      "cashDivAmt": 1.8,
-      "count": 2
-    },
-    {
       "code": "2412",
       "name": "中華電",
       "market": "TWSE",
       "days": [
-        "2026-10-28",
-        "2026-10-29"
+        "2026-10-29",
+        "2026-11-04"
       ],
-      "lastClose": 158.0,
+      "lastClose": 161.5,
       "cashDiv": true,
       "cashDivAmt": 5.2,
+      "count": 2
+    },
+    {
+      "code": "3045",
+      "name": "台灣大",
+      "market": "TWSE",
+      "days": [
+        "2026-10-29",
+        "2026-11-04"
+      ],
+      "lastClose": 135.0,
+      "cashDiv": true,
+      "cashDivAmt": 4.8,
+      "count": 2
+    },
+    {
+      "code": "4904",
+      "name": "遠傳",
+      "market": "TWSE",
+      "days": [
+        "2026-10-30",
+        "2026-11-04"
+      ],
+      "lastClose": 114.0,
+      "cashDiv": true,
+      "cashDivAmt": 3.81,
       "count": 2
     },
     {
@@ -119,78 +145,6 @@
       "count": 2
     },
     {
-      "code": "1303",
-      "name": "南亞",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28"
-      ],
-      "lastClose": 319.0,
-      "cashDiv": true,
-      "cashDivAmt": 0.8,
-      "count": 1
-    },
-    {
-      "code": "3231",
-      "name": "緯創",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28"
-      ],
-      "lastClose": 194.5,
-      "cashDiv": true,
-      "cashDivAmt": 5.5,
-      "count": 1
-    },
-    {
-      "code": "4938",
-      "name": "和碩",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28"
-      ],
-      "lastClose": 108.0,
-      "cashDiv": true,
-      "cashDivAmt": 4.0,
-      "count": 1
-    },
-    {
-      "code": "2882",
-      "name": "國泰金",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28"
-      ],
-      "lastClose": 115.5,
-      "cashDiv": true,
-      "cashDivAmt": 3.5,
-      "count": 1
-    },
-    {
-      "code": "2881",
-      "name": "富邦金",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28"
-      ],
-      "lastClose": 161.0,
-      "cashDiv": true,
-      "cashDivAmt": 4.25,
-      "count": 1
-    },
-    {
-      "code": "0056",
-      "name": "元大高股息",
-      "market": "TWSE",
-      "days": [
-        "2026-10-28"
-      ],
-      "lastClose": 57.25,
-      "cashDiv": false,
-      "cashDivAmt": null,
-      "count": 1
-    },
-    {
       "code": "2492",
       "name": "華新科",
       "market": "TWSE",
@@ -200,18 +154,6 @@
       "lastClose": 423.0,
       "cashDiv": true,
       "cashDivAmt": 2.5,
-      "count": 1
-    },
-    {
-      "code": "3045",
-      "name": "台灣大",
-      "market": "TWSE",
-      "days": [
-        "2026-10-29"
-      ],
-      "lastClose": 134.5,
-      "cashDiv": true,
-      "cashDivAmt": 4.8,
       "count": 1
     },
     {
@@ -225,7 +167,79 @@
       "cashDiv": true,
       "cashDivAmt": 35.0,
       "count": 1
+    },
+    {
+      "code": "2885",
+      "name": "元大金",
+      "market": "TWSE",
+      "days": [
+        "2026-10-29"
+      ],
+      "lastClose": 73.4,
+      "cashDiv": true,
+      "cashDivAmt": 1.8,
+      "count": 1
+    },
+    {
+      "code": "2890",
+      "name": "永豐金",
+      "market": "TWSE",
+      "days": [
+        "2026-10-29"
+      ],
+      "lastClose": 46.45,
+      "cashDiv": true,
+      "cashDivAmt": 1.1,
+      "count": 1
+    },
+    {
+      "code": "2891",
+      "name": "中信金",
+      "market": "TWSE",
+      "days": [
+        "2026-10-30"
+      ],
+      "lastClose": 75.8,
+      "cashDiv": true,
+      "cashDivAmt": 2.5,
+      "count": 1
+    },
+    {
+      "code": "2379",
+      "name": "瑞昱",
+      "market": "TWSE",
+      "days": [
+        "2026-10-30"
+      ],
+      "lastClose": 803.0,
+      "cashDiv": true,
+      "cashDivAmt": 25.0,
+      "count": 1
+    },
+    {
+      "code": "6415",
+      "name": "矽力*-KY",
+      "market": "TWSE",
+      "days": [
+        "2026-10-30"
+      ],
+      "lastClose": 502.0,
+      "cashDiv": true,
+      "cashDivAmt": 2.55,
+      "count": 1
+    },
+    {
+      "code": "2886",
+      "name": "兆豐金",
+      "market": "TWSE",
+      "days": [
+        "2026-10-30"
+      ],
+      "lastClose": 54.8,
+      "cashDiv": true,
+      "cashDivAmt": 1.75,
+      "count": 1
     }
   ],
-  "totalRecords": 82
+  "totalRecords": 83
 }
