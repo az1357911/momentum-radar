@@ -1,0 +1,28 @@
+[
+  {
+    "code": "2412",
+    "name": "中華電",
+    "market": "TWSE",
+    "foreignRank": 26,
+    "trustRank": 18,
+    "foreignAmt": 444602646,
+    "trustAmt": 397349519,
+    "close": 163.5,
+    "cashDiv": true,
+    "cashDivAmt": 5.2,
+    "divYear": 2025
+  },
+  {
+    "code": "1476",
+    "name": "儒鴻",
+    "market": "TWSE",
+    "foreignRank": 58,
+    "trustRank": 66,
+    "foreignAmt": 187699082,
+    "trustAmt": 39567155,
+    "close": 346.5,
+    "cashDiv": true,
+    "cashDivAmt": 15.0,
+    "divYear": 2025
+  }
+]
