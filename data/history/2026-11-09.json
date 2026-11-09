@@ -1,0 +1,15 @@
+[
+  {
+    "code": "2891",
+    "name": "中信金",
+    "market": "TWSE",
+    "foreignRank": 16,
+    "trustRank": 14,
+    "foreignAmt": 342287618,
+    "trustAmt": 574923085,
+    "close": 75.9,
+    "cashDiv": true,
+    "cashDivAmt": 2.5,
+    "divYear": 2025
+  }
+]
