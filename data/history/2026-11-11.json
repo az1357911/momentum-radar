@@ -1,0 +1,15 @@
+[
+  {
+    "code": "1802",
+    "name": "台玻",
+    "market": "TWSE",
+    "foreignRank": 10,
+    "trustRank": 25,
+    "foreignAmt": 1182054233,
+    "trustAmt": 277464018,
+    "close": 76.7,
+    "cashDiv": false,
+    "cashDivAmt": 0,
+    "divYear": 2025
+  }
+]
