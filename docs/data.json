@@ -1,25 +1,64 @@
 {
-  "generatedAt": "2026-11-12 01:37",
-  "refDate": "2026-11-11",
+  "generatedAt": "2026-11-13 01:50",
+  "refDate": "2026-11-12",
   "windowDates": [
-    "2026-11-05",
     "2026-11-06",
     "2026-11-09",
     "2026-11-10",
-    "2026-11-11"
+    "2026-11-11",
+    "2026-11-12"
   ],
   "today": [
     {
       "code": "1802",
       "name": "台玻",
       "market": "TWSE",
-      "foreignRank": 10,
-      "trustRank": 25,
-      "foreignAmt": 1182054233,
-      "trustAmt": 277464018,
-      "close": 76.7,
+      "foreignRank": 1,
+      "trustRank": 28,
+      "foreignAmt": 11566941512,
+      "trustAmt": 289407827,
+      "close": 81.7,
       "cashDiv": false,
       "cashDivAmt": 0,
+      "divYear": 2025
+    },
+    {
+      "code": "1476",
+      "name": "儒鴻",
+      "market": "TWSE",
+      "foreignRank": 41,
+      "trustRank": 75,
+      "foreignAmt": 348441750,
+      "trustAmt": 4744149,
+      "close": 369.0,
+      "cashDiv": true,
+      "cashDivAmt": 15.0,
+      "divYear": 2025
+    },
+    {
+      "code": "2618",
+      "name": "長榮航",
+      "market": "TWSE",
+      "foreignRank": 59,
+      "trustRank": 67,
+      "foreignAmt": 228621677,
+      "trustAmt": 7327952,
+      "close": 46.9,
+      "cashDiv": true,
+      "cashDivAmt": 2.0,
+      "divYear": 2025
+    },
+    {
+      "code": "2412",
+      "name": "中華電",
+      "market": "TWSE",
+      "foreignRank": 45,
+      "trustRank": 90,
+      "foreignAmt": 334066171,
+      "trustAmt": 2508820,
+      "close": 162.0,
+      "cashDiv": true,
+      "cashDivAmt": 5.2,
       "divYear": 2025
     }
   ],
@@ -29,10 +68,10 @@
       "name": "中華電",
       "market": "TWSE",
       "days": [
-        "2026-11-05",
-        "2026-11-06"
+        "2026-11-06",
+        "2026-11-12"
       ],
-      "lastClose": 163.5,
+      "lastClose": 162.0,
       "cashDiv": true,
       "cashDivAmt": 5.2,
       "count": 2
@@ -42,37 +81,26 @@
       "name": "儒鴻",
       "market": "TWSE",
       "days": [
-        "2026-11-05",
-        "2026-11-06"
+        "2026-11-06",
+        "2026-11-12"
       ],
-      "lastClose": 346.5,
+      "lastClose": 369.0,
       "cashDiv": true,
       "cashDivAmt": 15.0,
       "count": 2
     },
     {
-      "code": "2618",
-      "name": "長榮航",
+      "code": "1802",
+      "name": "台玻",
       "market": "TWSE",
       "days": [
-        "2026-11-05"
+        "2026-11-11",
+        "2026-11-12"
       ],
-      "lastClose": 45.1,
-      "cashDiv": true,
-      "cashDivAmt": 2.0,
-      "count": 1
-    },
-    {
-      "code": "1216",
-      "name": "統一",
-      "market": "TWSE",
-      "days": [
-        "2026-11-05"
-      ],
-      "lastClose": 80.9,
-      "cashDiv": true,
-      "cashDivAmt": 3.0,
-      "count": 1
+      "lastClose": 81.7,
+      "cashDiv": false,
+      "cashDivAmt": 0,
+      "count": 2
     },
     {
       "code": "2891",
@@ -87,17 +115,17 @@
       "count": 1
     },
     {
-      "code": "1802",
-      "name": "台玻",
+      "code": "2618",
+      "name": "長榮航",
       "market": "TWSE",
       "days": [
-        "2026-11-11"
+        "2026-11-12"
       ],
-      "lastClose": 76.7,
-      "cashDiv": false,
-      "cashDivAmt": 0,
+      "lastClose": 46.9,
+      "cashDiv": true,
+      "cashDivAmt": 2.0,
       "count": 1
     }
   ],
-  "totalRecords": 88
+  "totalRecords": 89
 }
