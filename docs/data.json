@@ -1,92 +1,79 @@
 {
-  "generatedAt": "2026-11-13 01:50",
-  "refDate": "2026-11-12",
+  "generatedAt": "2026-11-14 01:29",
+  "refDate": "2026-11-13",
   "windowDates": [
-    "2026-11-06",
     "2026-11-09",
     "2026-11-10",
     "2026-11-11",
-    "2026-11-12"
+    "2026-11-12",
+    "2026-11-13"
   ],
   "today": [
     {
-      "code": "1802",
-      "name": "台玻",
+      "code": "3443",
+      "name": "創意",
       "market": "TWSE",
-      "foreignRank": 1,
-      "trustRank": 28,
-      "foreignAmt": 11566941512,
-      "trustAmt": 289407827,
-      "close": 81.7,
-      "cashDiv": false,
-      "cashDivAmt": 0,
+      "foreignRank": 26,
+      "trustRank": 14,
+      "foreignAmt": 643517199,
+      "trustAmt": 492718726,
+      "close": 8610.0,
+      "cashDiv": true,
+      "cashDivAmt": 20.0,
+      "divYear": 2025
+    },
+    {
+      "code": "2891",
+      "name": "中信金",
+      "market": "TWSE",
+      "foreignRank": 36,
+      "trustRank": 5,
+      "foreignAmt": 526254639,
+      "trustAmt": 1220348237,
+      "close": 78.7,
+      "cashDiv": true,
+      "cashDivAmt": 2.5,
       "divYear": 2025
     },
     {
       "code": "1476",
       "name": "儒鴻",
       "market": "TWSE",
-      "foreignRank": 41,
-      "trustRank": 75,
-      "foreignAmt": 348441750,
-      "trustAmt": 4744149,
-      "close": 369.0,
+      "foreignRank": 72,
+      "trustRank": 35,
+      "foreignAmt": 247478239,
+      "trustAmt": 114168674,
+      "close": 386.5,
       "cashDiv": true,
       "cashDivAmt": 15.0,
       "divYear": 2025
     },
     {
-      "code": "2618",
-      "name": "長榮航",
+      "code": "2610",
+      "name": "華航",
       "market": "TWSE",
-      "foreignRank": 59,
-      "trustRank": 67,
-      "foreignAmt": 228621677,
-      "trustAmt": 7327952,
-      "close": 46.9,
+      "foreignRank": 69,
+      "trustRank": 65,
+      "foreignAmt": 266401133,
+      "trustAmt": 20614339,
+      "close": 23.2,
       "cashDiv": true,
-      "cashDivAmt": 2.0,
-      "divYear": 2025
-    },
-    {
-      "code": "2412",
-      "name": "中華電",
-      "market": "TWSE",
-      "foreignRank": 45,
-      "trustRank": 90,
-      "foreignAmt": 334066171,
-      "trustAmt": 2508820,
-      "close": 162.0,
-      "cashDiv": true,
-      "cashDivAmt": 5.2,
+      "cashDivAmt": 0.82,
       "divYear": 2025
     }
   ],
   "streak": [
     {
-      "code": "2412",
-      "name": "中華電",
+      "code": "2891",
+      "name": "中信金",
       "market": "TWSE",
       "days": [
-        "2026-11-06",
-        "2026-11-12"
+        "2026-11-09",
+        "2026-11-13"
       ],
-      "lastClose": 162.0,
+      "lastClose": 78.7,
       "cashDiv": true,
-      "cashDivAmt": 5.2,
-      "count": 2
-    },
-    {
-      "code": "1476",
-      "name": "儒鴻",
-      "market": "TWSE",
-      "days": [
-        "2026-11-06",
-        "2026-11-12"
-      ],
-      "lastClose": 369.0,
-      "cashDiv": true,
-      "cashDivAmt": 15.0,
+      "cashDivAmt": 2.5,
       "count": 2
     },
     {
@@ -103,16 +90,17 @@
       "count": 2
     },
     {
-      "code": "2891",
-      "name": "中信金",
+      "code": "1476",
+      "name": "儒鴻",
       "market": "TWSE",
       "days": [
-        "2026-11-09"
+        "2026-11-12",
+        "2026-11-13"
       ],
-      "lastClose": 75.9,
+      "lastClose": 386.5,
       "cashDiv": true,
-      "cashDivAmt": 2.5,
-      "count": 1
+      "cashDivAmt": 15.0,
+      "count": 2
     },
     {
       "code": "2618",
@@ -125,7 +113,43 @@
       "cashDiv": true,
       "cashDivAmt": 2.0,
       "count": 1
+    },
+    {
+      "code": "2412",
+      "name": "中華電",
+      "market": "TWSE",
+      "days": [
+        "2026-11-12"
+      ],
+      "lastClose": 162.0,
+      "cashDiv": true,
+      "cashDivAmt": 5.2,
+      "count": 1
+    },
+    {
+      "code": "3443",
+      "name": "創意",
+      "market": "TWSE",
+      "days": [
+        "2026-11-13"
+      ],
+      "lastClose": 8610.0,
+      "cashDiv": true,
+      "cashDivAmt": 20.0,
+      "count": 1
+    },
+    {
+      "code": "2610",
+      "name": "華航",
+      "market": "TWSE",
+      "days": [
+        "2026-11-13"
+      ],
+      "lastClose": 23.2,
+      "cashDiv": true,
+      "cashDivAmt": 0.82,
+      "count": 1
     }
   ],
-  "totalRecords": 89
+  "totalRecords": 90
 }

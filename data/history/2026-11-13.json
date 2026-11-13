@@ -1,0 +1,54 @@
+[
+  {
+    "code": "3443",
+    "name": "創意",
+    "market": "TWSE",
+    "foreignRank": 26,
+    "trustRank": 14,
+    "foreignAmt": 643517199,
+    "trustAmt": 492718726,
+    "close": 8610.0,
+    "cashDiv": true,
+    "cashDivAmt": 20.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2891",
+    "name": "中信金",
+    "market": "TWSE",
+    "foreignRank": 36,
+    "trustRank": 5,
+    "foreignAmt": 526254639,
+    "trustAmt": 1220348237,
+    "close": 78.7,
+    "cashDiv": true,
+    "cashDivAmt": 2.5,
+    "divYear": 2025
+  },
+  {
+    "code": "1476",
+    "name": "儒鴻",
+    "market": "TWSE",
+    "foreignRank": 72,
+    "trustRank": 35,
+    "foreignAmt": 247478239,
+    "trustAmt": 114168674,
+    "close": 386.5,
+    "cashDiv": true,
+    "cashDivAmt": 15.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2610",
+    "name": "華航",
+    "market": "TWSE",
+    "foreignRank": 69,
+    "trustRank": 65,
+    "foreignAmt": 266401133,
+    "trustAmt": 20614339,
+    "close": 23.2,
+    "cashDiv": true,
+    "cashDivAmt": 0.82,
+    "divYear": 2025
+  }
+]
