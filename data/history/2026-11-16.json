@@ -1,0 +1,15 @@
+[
+  {
+    "code": "1476",
+    "name": "儒鴻",
+    "market": "TWSE",
+    "foreignRank": 89,
+    "trustRank": 24,
+    "foreignAmt": 76070148,
+    "trustAmt": 82629963,
+    "close": 385.0,
+    "cashDiv": true,
+    "cashDivAmt": 15.0,
+    "divYear": 2025
+  }
+]
