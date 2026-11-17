@@ -1,0 +1,28 @@
+[
+  {
+    "code": "2618",
+    "name": "長榮航",
+    "market": "TWSE",
+    "foreignRank": 41,
+    "trustRank": 46,
+    "foreignAmt": 281886550,
+    "trustAmt": 59880100,
+    "close": 48.1,
+    "cashDiv": true,
+    "cashDivAmt": 2.0,
+    "divYear": 2025
+  },
+  {
+    "code": "2610",
+    "name": "華航",
+    "market": "TWSE",
+    "foreignRank": 51,
+    "trustRank": 63,
+    "foreignAmt": 222072400,
+    "trustAmt": 21508154,
+    "close": 23.1,
+    "cashDiv": true,
+    "cashDivAmt": 0.82,
+    "divYear": 2025
+  }
+]
