@@ -1,0 +1,28 @@
+[
+  {
+    "code": "2412",
+    "name": "中華電",
+    "market": "TWSE",
+    "foreignRank": 16,
+    "trustRank": 42,
+    "foreignAmt": 964187313,
+    "trustAmt": 102448489,
+    "close": 166.0,
+    "cashDiv": true,
+    "cashDivAmt": 5.2,
+    "divYear": 2025
+  },
+  {
+    "code": "3293",
+    "name": "鈊象",
+    "market": "TPEx",
+    "foreignRank": 45,
+    "trustRank": 49,
+    "foreignAmt": 233493191,
+    "trustAmt": 41694640,
+    "close": 792.0,
+    "cashDiv": true,
+    "cashDivAmt": 42.0,
+    "divYear": 2020
+  }
+]
