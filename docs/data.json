@@ -1,90 +1,25 @@
 {
-  "generatedAt": "2026-11-20 02:47",
-  "refDate": "2026-11-19",
+  "generatedAt": "2026-11-21 02:12",
+  "refDate": "2026-11-20",
   "windowDates": [
-    "2026-11-13",
     "2026-11-16",
     "2026-11-17",
     "2026-11-18",
-    "2026-11-19"
+    "2026-11-19",
+    "2026-11-20"
   ],
-  "today": [
-    {
-      "code": "2412",
-      "name": "中華電",
-      "market": "TWSE",
-      "foreignRank": 16,
-      "trustRank": 42,
-      "foreignAmt": 964187313,
-      "trustAmt": 102448489,
-      "close": 166.0,
-      "cashDiv": true,
-      "cashDivAmt": 5.2,
-      "divYear": 2025
-    },
-    {
-      "code": "3293",
-      "name": "鈊象",
-      "market": "TPEx",
-      "foreignRank": 45,
-      "trustRank": 49,
-      "foreignAmt": 233493191,
-      "trustAmt": 41694640,
-      "close": 792.0,
-      "cashDiv": true,
-      "cashDivAmt": 42.0,
-      "divYear": 2020
-    }
-  ],
+  "today": [],
   "streak": [
     {
       "code": "1476",
       "name": "儒鴻",
       "market": "TWSE",
       "days": [
-        "2026-11-13",
         "2026-11-16"
       ],
       "lastClose": 385.0,
       "cashDiv": true,
       "cashDivAmt": 15.0,
-      "count": 2
-    },
-    {
-      "code": "2610",
-      "name": "華航",
-      "market": "TWSE",
-      "days": [
-        "2026-11-13",
-        "2026-11-17"
-      ],
-      "lastClose": 23.1,
-      "cashDiv": true,
-      "cashDivAmt": 0.82,
-      "count": 2
-    },
-    {
-      "code": "3443",
-      "name": "創意",
-      "market": "TWSE",
-      "days": [
-        "2026-11-13"
-      ],
-      "lastClose": 8610.0,
-      "cashDiv": true,
-      "cashDivAmt": 20.0,
-      "count": 1
-    },
-    {
-      "code": "2891",
-      "name": "中信金",
-      "market": "TWSE",
-      "days": [
-        "2026-11-13"
-      ],
-      "lastClose": 78.7,
-      "cashDiv": true,
-      "cashDivAmt": 2.5,
       "count": 1
     },
     {
@@ -97,6 +32,18 @@
       "lastClose": 48.1,
       "cashDiv": true,
       "cashDivAmt": 2.0,
+      "count": 1
+    },
+    {
+      "code": "2610",
+      "name": "華航",
+      "market": "TWSE",
+      "days": [
+        "2026-11-17"
+      ],
+      "lastClose": 23.1,
+      "cashDiv": true,
+      "cashDivAmt": 0.82,
       "count": 1
     },
     {
@@ -124,5 +71,5 @@
       "count": 1
     }
   ],
-  "totalRecords": 94
+  "totalRecords": 95
 }
