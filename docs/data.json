@@ -1,39 +1,42 @@
 {
-  "generatedAt": "2026-11-24 05:50",
-  "refDate": "2026-11-23",
+  "generatedAt": "2026-11-25 04:28",
+  "refDate": "2026-11-24",
   "windowDates": [
-    "2026-11-17",
     "2026-11-18",
     "2026-11-19",
     "2026-11-20",
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
   ],
-  "today": [],
-  "streak": [
-    {
-      "code": "2618",
-      "name": "長榮航",
-      "market": "TWSE",
-      "days": [
-        "2026-11-17"
-      ],
-      "lastClose": 48.1,
-      "cashDiv": true,
-      "cashDivAmt": 2.0,
-      "count": 1
-    },
+  "today": [
     {
       "code": "2610",
       "name": "華航",
       "market": "TWSE",
-      "days": [
-        "2026-11-17"
-      ],
-      "lastClose": 23.1,
+      "foreignRank": 7,
+      "trustRank": 20,
+      "foreignAmt": 352475816,
+      "trustAmt": 216413976,
+      "close": 22.5,
       "cashDiv": true,
       "cashDivAmt": 0.82,
-      "count": 1
+      "divYear": 2025
     },
+    {
+      "code": "2597",
+      "name": "潤弘",
+      "market": "TWSE",
+      "foreignRank": 15,
+      "trustRank": 40,
+      "foreignAmt": 155997498,
+      "trustAmt": 58428491,
+      "close": 192.0,
+      "cashDiv": true,
+      "cashDivAmt": 9.67,
+      "divYear": 2025
+    }
+  ],
+  "streak": [
     {
       "code": "2412",
       "name": "中華電",
@@ -57,7 +60,31 @@
       "cashDiv": true,
       "cashDivAmt": 42.0,
       "count": 1
+    },
+    {
+      "code": "2610",
+      "name": "華航",
+      "market": "TWSE",
+      "days": [
+        "2026-11-24"
+      ],
+      "lastClose": 22.5,
+      "cashDiv": true,
+      "cashDivAmt": 0.82,
+      "count": 1
+    },
+    {
+      "code": "2597",
+      "name": "潤弘",
+      "market": "TWSE",
+      "days": [
+        "2026-11-24"
+      ],
+      "lastClose": 192.0,
+      "cashDiv": true,
+      "cashDivAmt": 9.67,
+      "count": 1
     }
   ],
-  "totalRecords": 96
+  "totalRecords": 97
 }

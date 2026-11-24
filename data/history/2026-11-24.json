@@ -1,0 +1,28 @@
+[
+  {
+    "code": "2610",
+    "name": "華航",
+    "market": "TWSE",
+    "foreignRank": 7,
+    "trustRank": 20,
+    "foreignAmt": 352475816,
+    "trustAmt": 216413976,
+    "close": 22.5,
+    "cashDiv": true,
+    "cashDivAmt": 0.82,
+    "divYear": 2025
+  },
+  {
+    "code": "2597",
+    "name": "潤弘",
+    "market": "TWSE",
+    "foreignRank": 15,
+    "trustRank": 40,
+    "foreignAmt": 155997498,
+    "trustAmt": 58428491,
+    "close": 192.0,
+    "cashDiv": true,
+    "cashDivAmt": 9.67,
+    "divYear": 2025
+  }
+]
