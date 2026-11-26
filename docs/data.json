@@ -1,39 +1,15 @@
 {
-  "generatedAt": "2026-11-26 03:41",
-  "refDate": "2026-11-25",
+  "generatedAt": "2026-11-27 03:22",
+  "refDate": "2026-11-26",
   "windowDates": [
-    "2026-11-19",
     "2026-11-20",
     "2026-11-23",
     "2026-11-24",
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
   ],
   "today": [],
   "streak": [
-    {
-      "code": "2412",
-      "name": "中華電",
-      "market": "TWSE",
-      "days": [
-        "2026-11-19"
-      ],
-      "lastClose": 166.0,
-      "cashDiv": true,
-      "cashDivAmt": 5.2,
-      "count": 1
-    },
-    {
-      "code": "3293",
-      "name": "鈊象",
-      "market": "TPEx",
-      "days": [
-        "2026-11-19"
-      ],
-      "lastClose": 792.0,
-      "cashDiv": true,
-      "cashDivAmt": 42.0,
-      "count": 1
-    },
     {
       "code": "2610",
       "name": "華航",
@@ -59,5 +35,5 @@
       "count": 1
     }
   ],
-  "totalRecords": 98
+  "totalRecords": 99
 }
